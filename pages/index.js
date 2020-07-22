@@ -2,208 +2,154 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+    <Head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta property="og:title" content="Tanner Griffin - Web Developer"/>
+		<meta property="og:image" content="https://tan-x.github.io/assets/images/screenshot2.PNG"/>
+		<meta property="og:description" content="Tanner Griffin is a Full Stack Web Developer with years of experience managing a team and delivering financial services to business clients. His background in audio engineering, electronics, financial operations, and management all lend to his ability to manage large projects and provide a quality product to the customer."/>
+		<meta property="og:url" content="https://tan-x.github.io/assets/images/screenshot2.PNG"/>
+		<link rel="stylesheet" type="text/css" href="https://tan-x.github.io/" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<title>Tanner M. Griffin</title>
+    </Head>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky">
+			<a class="navbar-brand" href="index.html">
+				<span>t</span><svg
+					class="bi bi-triangle"
+					width=".9em"
+					height=".9em"
+					viewBox="0 0 16 16"
+					fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						fill-rule="evenodd"
+						d="M7.938 2.016a.146.146 0 00-.054.057L1.027 13.74a.176.176 0 00-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 00.066-.017.163.163 0 00.055-.06.176.176 0 00-.003-.183L8.12 2.073a.146.146 0 00-.054-.057A.13.13 0 008.002 2a.13.13 0 00-.064.016zm1.044-.45a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"
+						clip-rule="evenodd"
+					/></svg><span>n-x</span>
+			</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link navbar-name" href="#page-top">Home<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/portfolio">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contact">Contact</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Links
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="https://github.com/tan-x/" target="_blank">GitHub</a>
+							<a class="dropdown-item" href="https://www.linkedin.com/in/tannermgriffin/" target="_blank">LinkedIn</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="https://soundcloud.com/tangence/" target="_blank">SoundCloud</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+		<main class="container-main flex-column" id="index">
+			{/* <!-- Header --> */}
+			<header class="masthead">
+				<img class="profile-img fade-in" src="assets/images/0.jfif" alt="Profile Picture" />
+				<section class="intro-text">
+					<h1><span class="boxitem2 rounded fade-in" id="name">Tanner M. Griffin</span></h1>
+					<div class="border-top"></div>
+					<h3><span class="boxitem2 rounded fade-in" id="dev">Full Stack Developer</span></h3>
+				</section>
+			</header>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+			<div class="container flex-column">
+				<div class="row justify-content-xl-center">
+					{/* <!-- Main/About --> */}
+					<section class="content-main flex-column boxitem rounded col-xl justify-content-xl-around fade-in" id="about">
+						<header>
+							<h3><i class="far fa-user-circle"></i> About</h3>
+						</header>
+						<p>
+						Tanner Griffin is a Full Stack Web Developer with years of experience managing a team and delivering
+						financial services to business clients. His background in audio engineering, electronics, financial
+						operations, and management all lend to his ability to manage large projects and provide a quality
+						product to the customer.
+						</p>
+						<a class="btn btn-primary" href="assets/TGriffin_resume.pdf" target="_blank">Resume</a>
+					</section>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+						{/* <!-- Services  --> */}
+					<section class="content-main flex-column boxitem rounded col-xl justify-content-xl-around fade-in" id="services">
+						<header>
+							<h3><i class="far fa-handshake"></i> Services</h3>
+						</header>
+						<h4>Front End Development</h4>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mollis varius mauris pharetra
+						euismod. Donec id congue dui.
+						</p>
+						<h4>UI/UX Design</h4>
+						<p>
+						Donec pharetra, lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id tempus nisi.
+						In vel metus diam.
+						</p>
+					</section>
+        		</div>
+        
+				<div class="row justify-content-xl-center">
+					{/* <!-- Portfolio Intro --> */}
+					<section class="content-main  flex-column boxitem rounded col-xl justify-content-xl-around fade-in" id="portfolioBtm">
+						<header>
+							<h3><i class="fas fa-book-open"></i> Portfolio</h3>
+						</header>
+            			<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta elementum tempus. Sed non ligula
+						dignissim, sollicitudin orci eget, luctus ex.
+           				</p>
+						<form method="get" action="portfolio.html">
+							<button class="btn btn-primary">Click Here</button>
+						</form>
+					</section>
+				</div>
+			</div>
+    	</main>
+    
+		{/* <!-- Footer --> */}
+		<footer class="footer flex-center mt-auto py-3">
+			<a href="https://github.com/tan-x/" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+			<a href="https://www.linkedin.com/in/tannermgriffin/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+			<a href="https://soundcloud.com/tangence" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>
+    	</footer>
+      </>
   )
 }

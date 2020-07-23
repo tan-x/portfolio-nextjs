@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Flip from 'react-reveal/Flip'
 import Slide from 'react-reveal/Slide'
 import Nav from '../components/Nav'
+import { FaUserCircle, FaBookOpen, FaHandshake } from 'react-icons/fa'
 import profilePic from '../assets/images/profile.jpg'
 import Footer from '../components/Footer'
 
@@ -22,6 +23,7 @@ export default function Home() {
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 		<title>Tanner M. Griffin</title>
     </Head>
@@ -51,7 +53,7 @@ export default function Home() {
           <Slide bottom>
 					<section className="content-main flex-column boxitem rounded col-xl justify-content-xl-around" id="about">
 						<header>
-							<h3><i className="far fa-user-circle"></i> About</h3>
+							<h3><FaUserCircle/> About</h3>
 						</header>
 						<p>
 						Tanner Griffin is a Full Stack Web Developer with years of experience managing a team and delivering
@@ -65,7 +67,7 @@ export default function Home() {
 						{/* <!-- Services  --> */}
 					<section className="content-main flex-column boxitem rounded col-xl justify-content-xl-around" id="services">
 						<header>
-							<h3><i className="far fa-handshake"></i> Services</h3>
+							<h3><FaHandshake/> Services</h3>
 						</header>
 						<h4>Front End Development</h4>
 						<p>
@@ -85,7 +87,7 @@ export default function Home() {
 					{/* <!-- Portfolio Intro --> */}
 					<section className="content-main  flex-column boxitem rounded col-xl justify-content-xl-around" id="portfolioBtm">
 						<header>
-							<h3><i className="fas fa-book-open"></i> Portfolio</h3>
+							<h3><FaBookOpen/> Portfolio</h3>
 						</header>
             			<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta elementum tempus. Sed non ligula

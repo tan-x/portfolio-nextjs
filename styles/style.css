@@ -236,15 +236,21 @@ p {
 	padding: 0 15px;
 }
 
+.footer a {
+	text-decoration: none;
+	color: rgba(0, 146, 204, 0.6);
+	margin: 5px;
+}
+
 .footer a:hover {
 	text-decoration: none;
-	color: transparent;
+	color: rgba(229, 57, 53, 0.6);
 }
 
 .fa-github:before,
 .fa-linkedin:before,
 .fa-soundcloud:before {
-	color: var(--secondary);
+	color: rgba(0, 146, 204, 0.6);
 	margin-left: 8px;
 }
 

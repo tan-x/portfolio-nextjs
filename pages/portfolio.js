@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import { FaBookOpen } from 'react-icons/fa'
 import profilePic from '../assets/images/profile.jpg'
 
 export default function Contact() {
@@ -32,7 +33,7 @@ export default function Contact() {
 
 			{/* <!-- Main/Portfolio --> */}
 			<main className="content-port flex-column boxitem rounded" id="port">
-				<h3><i className="fas fa-book-open"></i> Portfolio</h3>
+				<h3><FaBookOpen/> Portfolio</h3>
 				<div className="port-container">
 					<article className="port-item flex-center" id="item1" data-toggle="modal" data-target="#myModal">
 						<h2>React Native App</h2>

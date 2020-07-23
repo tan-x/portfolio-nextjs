@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer'
+import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import profilePic from '../assets/images/profile.jpg'
 
 export default function Contact() {
@@ -42,7 +43,7 @@ export default function Contact() {
 				<main className='content-contact boxitem rounded'>
 					{/* <!--Section heading--> */}
 					<h3 className='text-center my-4'>
-						<i className='fas fa-envelope-open'></i> Contact me
+						<FaEnvelopeOpen/> Contact me
 					</h3>
 					{/* <!--Section description--> */}
 					<p className='text-center mx-auto mb-5'>
@@ -122,12 +123,12 @@ export default function Contact() {
 						<div className='col-xl-3 text-center'>
 							<ul className='list-unstyled mb-0'>
 								<li>
-									<i className='fas fa-map-marker-alt fa-2x'></i>
+									<FaMapMarkerAlt className='fas fa-map-marker-alt fa-2x'/>
 									<p>Austin, TX 78745, USA</p>
 								</li>
 
 								<li>
-									<i className='fas fa-envelope mt-4 fa-2x'></i>
+									<FaEnvelope className='fas fa-envelope mt-4 fa-2x'/>
 									<p>tannerm&#8203;griffin&#8203;@gmail.com</p>
 								</li>
 							</ul>

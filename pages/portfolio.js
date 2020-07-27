@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import PortfolioCard from '../components/PortfolioCard'
 import { FaBookOpen } from 'react-icons/fa'
 import profilePic from '../assets/images/profile.jpg'
 
@@ -30,14 +31,18 @@ export default function Contact() {
 					<div className="border-top"></div>
 				</section>
 			</header>	  
+			<PortfolioCard tech="React Native" title="PubIO" img={require("../assets/images/pubioHoriB.png")}/>
+			<PortfolioCard tech="jQuery" title="Web Dashboard" img={require("../assets/images/webSS.png")}/>
+			<PortfolioCard tech="React.js / Firebase" title="Gloomhaven Party Tracker" img={require("../assets/images/pubioHoriB.png")}/>
+			
 
 			{/* <!-- Main/Portfolio --> */}
-			<main className="content-port flex-column boxitem rounded" id="port">
+			{/* <main className="content-port flex-column boxitem rounded" id="port">
 				<h3><FaBookOpen/> Portfolio</h3>
 				<div className="port-container">
 					<article className="port-item flex-center" id="item1" data-toggle="modal" data-target="#myModal">
 						<h2>React Native App</h2>
-						<img id="img1" style={{objectFit: "contain"}} src={require("../assets/images/pubioHoriB.png")} alt="PubIO logo" />
+						<img id="img1"  src={require("../assets/images/pubioHoriB.png")} alt="PubIO logo" />
 					</article>
 					<article className="port-item flex-center" id="item2">
 						<h2>Weather<br />Dashboard</h2>
@@ -60,7 +65,7 @@ export default function Contact() {
 						<img id="img6" src={require("../assets/images/scheduler.png")} alt="Day scheduler" />
 					</article>
 				</div>
-			</main>
+			</main> */}
 			<div className="modal fade" id="myModal">
 				<div className="modal-dialog">
     

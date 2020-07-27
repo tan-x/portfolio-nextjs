@@ -46,10 +46,10 @@ export default function Contact() {
 						<FaEnvelopeOpen/> Contact me
 					</h3>
 					{/* <!--Section description--> */}
-					<p className='text-center mx-auto mb-5'>
+					{/* <p className='text-center mx-auto mb-5'>
 						Do you have any questions? Please do not hesitate to contact me directly. I will come
 						back to you within a matter of hours to help you.
-					</p>
+					</p> */}
 
 					<div className='row'>
 						{/* <!--Grid column--> */}

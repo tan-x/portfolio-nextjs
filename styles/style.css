@@ -72,6 +72,19 @@ nav {
 	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+.dropdown-toggle {
+	background: transparent !important;
+	border: rgba(255, 255, 255, 0.753);
+}
+
+.btn-primary:focus {
+	box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
 .sticky {
 	position: fixed;
 	top: 0;
@@ -166,7 +179,7 @@ header.smhead img {
 
 .container {
 	max-width: 1600px !important;
-	margin: 100px 0;
+	margin: 10px 0;
 	width: 85vw;
 }
 

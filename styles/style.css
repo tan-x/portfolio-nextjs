@@ -316,6 +316,15 @@ p {
 	overflow: hidden;
 }
 
+.tech-icon {
+	margin: 0 2px;
+}
+
+#firebase {
+	width: 1em;
+	margin: 0 -1px;
+}
+
 /* grid layout */
 #item1 {
 	grid-row: 1 / 2;

@@ -31,9 +31,9 @@ export default function Contact() {
 					<div className="border-top"></div>
 				</section>
 			</header>	  
-			<PortfolioCard tech="React Native" title="PubIO" img={require("../assets/images/pubioHoriB.png")}/>
-			<PortfolioCard tech="jQuery" title="Web Dashboard" img={require("../assets/images/webSS.png")}/>
-			<PortfolioCard tech="React.js / Firebase" title="Gloomhaven Party Tracker" img={require("../assets/images/pubioHoriB.png")}/>
+			<PortfolioCard tech={['react', 'nodejs', 'mysql', 'css3']} techtext="React / Express.js" title="Autoban" img={require("../assets/images/pubioHoriB.png")}/>
+			<PortfolioCard tech={['react', 'nodejs', 'css3', 'firebase']} techtext="React / Firebase" title="Gloomhaven Party Tracker" img={require("../assets/images/pubioHoriB.png")}/>
+			<PortfolioCard tech={['react', 'nodejs', 'css3', 'firebase']} techtext="React Native / Firebase" title="PubIO" img={require("../assets/images/pubioHoriB.png")}/>
 			
 
 			{/* <!-- Main/Portfolio --> */}

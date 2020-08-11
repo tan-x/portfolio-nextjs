@@ -32,7 +32,7 @@ export default function Contact() {
 				</section>
 			</header>	  
 			<PortfolioCard tech={['react', 'nodejs', 'mysql', 'css3']} techtext="React / Express.js" title="Autoban" img={require("../assets/images/pubioHoriB.png")}/>
-			<PortfolioCard tech={['react', 'nodejs', 'css3', 'firebase']} techtext="React / Firebase" title="Gloomhaven Party Tracker" img={require("../assets/images/pubioHoriB.png")}/>
+			<PortfolioCard tech={['react', 'nodejs', 'css3', 'firebase']} techtext="React / Firebase" title="Party Tracker" subtitle="Gloomhaven: Jaws of the Lion" img={require("../assets/images/pubioHoriB.png")}/>
 			<PortfolioCard tech={['react', 'nodejs', 'css3', 'firebase']} techtext="React Native / Firebase" title="PubIO" img={require("../assets/images/pubioHoriB.png")}/>
 			
 

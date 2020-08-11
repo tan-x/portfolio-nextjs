@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Dropdown, Card } from 'react-bootstrap';
-import { FaReact, FaNodeJs, FaCss3Alt } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaCss3Alt, FaGithub } from 'react-icons/fa';
 import { DiJavascript, DiCss3 } from 'react-icons/di';
 import { GrMysql } from 'react-icons/gr';
 import firebase from '../assets/images/icons8-firebase.svg'
@@ -35,11 +35,7 @@ export default function PortfolioCard(props) {
           boxShadow: '2px 4px 20px black',
         }}
       >
-        <Card.Img
-          style={{ objectFit: 'contain', height: '50%' }}
-          variant='top'
-          src={props.img}
-        />
+        
         <Card.Body
           style={{
             backgroundColor: 'rgba(250, 230, 230, .6)',
@@ -48,9 +44,9 @@ export default function PortfolioCard(props) {
             color: 'black',
           }}
         >
-          <Card.Title>{props.title}</Card.Title>
+          {/* <Card.Title>{props.title}</Card.Title> */}
           <Card.Text>
-            {props.techtext}
+            {props.title}
             <div
               style={{
                 display: 'flex',
@@ -58,7 +54,7 @@ export default function PortfolioCard(props) {
                 minWidth: 'fit-content',
                 position: 'absolute',
                 right: 20,
-                bottom: 25,
+                top: 35,
               }}
             >
               
@@ -72,7 +68,21 @@ export default function PortfolioCard(props) {
               })}
             </div>
           </Card.Text>
+          <Card.Text style={{fontSize: '2.2vw'}}>
+
+          {props.subtitle}
+          </Card.Text>
+          <Card.Img
+          style={{ objectFit: 'contain', height: '50%' }}
+          variant='top'
+          src={props.img}
+        />
+        <Card.Text style={{fontSize: '2.3vw', display: 'flex', alignItems: 'center'}}>
+          <FaGithub className='tech-icon'/> Github
+          - Link
+        </Card.Text>
         </Card.Body>
+        
       </Card>
     </Slide>
   );

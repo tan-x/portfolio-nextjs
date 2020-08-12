@@ -3,9 +3,12 @@ import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen } from 'react-icons/fa';
-import profilePic from '../../assets/images/profile.jpg';
+// import profilePic from '../../assets/images/profile.jpg';
+// import autoban from '../../assets/images/autoban.png'
+// import partytracker from '../../assets/images/partytracker.png'
+// import pubio from '../../assets/images/pubio.png'
 
-export default function Contact() {
+export default function Portfolio() {
 	return (
 		<>
 			<Head>
@@ -26,7 +29,7 @@ export default function Contact() {
 				{/* <!-- Header --> */}
 				<header className='smhead'>
 					<section>
-						<img className='profile-img profile-img-sm' src={profilePic} alt='Profile Picture' />
+						<img className='profile-img profile-img-sm' src='/images/profile.jpg' alt='Profile Picture' />
 						<h3 className='portfolio-head'>Tanner M. Griffin</h3>
 						{/* <div className='border-top'></div> */}
 					</section>
@@ -37,7 +40,7 @@ export default function Contact() {
 					tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
 					dev='Full Stack'
 					title='Autoban'
-					img={require('../../assets/images/autoban.png')}
+					img={'/images/autoban.PNG'}
 					description={"A project management solution \n for coders"}
 				/>
 				<PortfolioCard
@@ -46,7 +49,7 @@ export default function Contact() {
 					dev='Front End'
 					title='Party Tracker'
 					subtitle='Gloomhaven: Jaws of the Lion'
-					img={require('../../assets/images/partytracker.png')}
+					img={'/images/partytracker.PNG'}
 					description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
 				/>
 				<PortfolioCard
@@ -54,7 +57,7 @@ export default function Contact() {
 					tech={['react', 'nodejs', 'firebase', 'css3']}
 					dev='Front End'
 					title='PubIO'
-					img={require('../../assets/images/pubio.png')}
+					img={'/images/pubio.png'}
 					description={`React Native app for planning and \n joining pub crawls`}
 				/>
 

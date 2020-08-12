@@ -6,7 +6,6 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start -p $PORT",
-		"heroku-postbuild": "npm run build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
@@ -26,5 +25,8 @@
 	},
 	"devDependencies": {
 		"url-loader": "^4.1.0"
-	}
+	},
+	"cacheDirectories": [
+		".next/cache/"
+	]
 }

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer'
 import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
-import profilePic from '../assets/images/profile.jpg'
+// import profilePic from '/images/profile.jpg'
 
 export default function Contact() {
 	return (
@@ -33,7 +33,7 @@ export default function Contact() {
 				{/* <!-- Header --> */}
 				<header className='smhead'>
 					<section>
-						<img className='profile-img profile-img-sm' src={profilePic} alt='Profile Picture' />
+						<img className='profile-img profile-img-sm' src='/images/profile.jpg' alt='Profile Picture' />
 						<h3 className='portfolio-head'>Tanner M. Griffin</h3>
 						<div className='border-top'></div>
 					</section>

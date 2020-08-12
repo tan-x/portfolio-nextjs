@@ -4,6 +4,9 @@ import Footer from '../../components/Footer';
 import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen } from 'react-icons/fa';
 import profilePic from '../../assets/images/profile.jpg';
+import autoban from '../../assets/images/autoban.png'
+import partytracker from '../../assets/images/partytracker.png'
+import pubio from '../../assets/images/pubio.png'
 
 export default function Contact() {
 	return (
@@ -37,7 +40,7 @@ export default function Contact() {
 					tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
 					dev='Full Stack'
 					title='Autoban'
-					img={require('../../assets/images/autoban.png')}
+					img={autoban}
 					description={"A project management solution \n for coders"}
 				/>
 				<PortfolioCard
@@ -46,7 +49,7 @@ export default function Contact() {
 					dev='Front End'
 					title='Party Tracker'
 					subtitle='Gloomhaven: Jaws of the Lion'
-					img={require('../../assets/images/partytracker.png')}
+					img={partytracker}
 					description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
 				/>
 				<PortfolioCard
@@ -54,7 +57,7 @@ export default function Contact() {
 					tech={['react', 'nodejs', 'firebase', 'css3']}
 					dev='Front End'
 					title='PubIO'
-					img={require('../../assets/images/pubio.png')}
+					img={pubio}
 					description={`React Native app for planning and \n joining pub crawls`}
 				/>
 

@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import PortfolioCard from '../components/PortfolioCard';
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen } from 'react-icons/fa';
-import profilePic from '../assets/images/profile.jpg';
+import profilePic from '../../assets/images/profile.jpg';
 
 export default function Contact() {
 	return (
@@ -34,10 +34,10 @@ export default function Contact() {
 
 				<PortfolioCard
 					left={true}
-					tech={['react', 'nodejs', 'mysql', 'css3']}
+					tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
 					dev='Full Stack'
 					title='Autoban'
-					img={require('../assets/images/autoban.png')}
+					img={require('../../assets/images/autoban.png')}
 					description={"A project management solution \n for coders"}
 				/>
 				<PortfolioCard
@@ -46,7 +46,7 @@ export default function Contact() {
 					dev='Front End'
 					title='Party Tracker'
 					subtitle='Gloomhaven: Jaws of the Lion'
-					img={require('../assets/images/partytracker.png')}
+					img={require('../../assets/images/partytracker.png')}
 					description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
 				/>
 				<PortfolioCard
@@ -54,7 +54,7 @@ export default function Contact() {
 					tech={['react', 'nodejs', 'firebase', 'css3']}
 					dev='Front End'
 					title='PubIO'
-					img={require('../assets/images/pubioHoriB.png')}
+					img={require('../../assets/images/pubio.png')}
 					description={`React Native app for planning and \n joining pub crawls`}
 				/>
 

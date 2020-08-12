@@ -1,5 +1,6 @@
 // import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/Link';
 import { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 
@@ -10,7 +11,8 @@ export default function Nav() {
 
   return (
     <nav className='navbar navbar-expand-lg navbar-dark sticky'>
-      <a className='navbar-brand' href='/index'>
+      <Link href='/'>
+        <div className='navbar-brand clickable'>
         <span>t</span>
         <svg
           className='bi bi-triangle'
@@ -27,12 +29,13 @@ export default function Nav() {
           />
         </svg>
         <span>n-x</span>
-      </a>
+        </div>
+      </Link>
       <button
         className='navbar-toggler'
         type='button'
-        dataToggle='collapse'
-        dataTarget='#navbarSupportedContent'
+        // dataToggle='collapse'
+        // dataTarget='#navbarSupportedContent'
         aria-controls='navbarSupportedContent'
         aria-expanded='false'
         aria-label='Toggle navigation'

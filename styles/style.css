@@ -36,7 +36,7 @@ nav {
 	font-size: 18px !important;
 	font-family: 'Montserrat' !important;
 	z-index: 100;
-	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .clickable {
@@ -133,12 +133,16 @@ nav {
 .smhead {
 	color: white;
 	width: 100%;
-	height: 25vh;
-	min-height: 250px;
-	/* background-color: white; */
-	margin: 20px 0 -100px;
-	/* color: black; */
-	text-align: center;
+	height: 20vh;
+	min-height: 200px;
+	background: white;
+	/* background: linear-gradient(0deg, transparent, rgba(245, 245, 245, 0.712), rgba(255, 255, 255, 0.87), rgba(245, 245, 245, 0.692), transparent); */
+	margin: 0 0 -100px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 5px 10px 5px white;
 	/* border-bottom: 20px solid #ffff !important; */
 }
 
@@ -175,7 +179,7 @@ header.smhead img {
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
-	padding: 40px 0;
+	padding: 0 0 20px;
 }
 
 .flex-column {
@@ -261,18 +265,17 @@ p {
 .footer {
 	background-color: white !important;
 	font-size: 30px;
-	height: 60px;
+	height: 50px;
 	margin-top: -50px;
-	padding: 0 15px;
-	position: absolute;
+	padding: 8px !important;
+	position: relative;
 	bottom: 0;
-	width: 100%
 }
 
 .footer a {
 	text-decoration: none;
 	color: rgba(0, 146, 204, 0.6);
-	margin: 5px;
+	margin: 0 5px;
 }
 
 .footer a:hover {
@@ -314,7 +317,8 @@ p {
 /* portfolio */
 
 .portfolio-head {
-	padding: 10px;
+	padding: 10px 10px 20px 37vw;
+	font-weight: bold;
 }
 
 .portfolio-card {

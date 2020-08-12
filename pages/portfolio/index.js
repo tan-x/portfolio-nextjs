@@ -40,7 +40,7 @@ export default function Portfolio() {
 					tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
 					dev='Full Stack'
 					title='Autoban'
-					img={'/images/autoban.png'}
+					img={'/images/autoban.PNG'}
 					description={"A project management solution \n for coders"}
 				/>
 				<PortfolioCard
@@ -49,7 +49,7 @@ export default function Portfolio() {
 					dev='Front End'
 					title='Party Tracker'
 					subtitle='Gloomhaven: Jaws of the Lion'
-					img={'/images/partytracker.png'}
+					img={'/images/partytracker.PNG'}
 					description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
 				/>
 				<PortfolioCard

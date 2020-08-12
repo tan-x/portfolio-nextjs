@@ -303,6 +303,12 @@ p {
 	border-radius: 7px;
 	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
 	border: 0;
+	transition: all .2s ease-in-out;
+}
+
+.portfolio-card:hover {
+	transform: scale(1.009);
+	transition: all .2s ease-in-out;
 }
 
 .port-card-body {
@@ -355,7 +361,15 @@ p {
 }
 
 #css {
-	margin: 0 5px;
+	margin: 0 4px;
+}
+
+#mysql {
+	margin: 0 7px 0 8px;
+}
+
+#mongo {
+	margin: 0 4px;
 }
 
 .modal {

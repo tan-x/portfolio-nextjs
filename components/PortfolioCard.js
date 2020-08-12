@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Dropdown, Card } from 'react-bootstrap';
 import { FaReact, FaNodeJs, FaCss3Alt, FaGithub } from 'react-icons/fa';
-import { DiJavascript, DiCss3 } from 'react-icons/di';
+import { DiJavascript, DiCss3, DiMongodb } from 'react-icons/di';
 import { GrMysql } from 'react-icons/gr';
 import firebase from '../assets/images/icons8-firebase.svg';
 import sequelize from '../assets/images/sequelize.png';
@@ -20,25 +20,17 @@ export default function PortfolioCard(props) {
   //   console.log(route);
   const [hover, setHover] = useState({ right: '-10%', filter: 'opacity(80%)' });
   
-//   const useWidth = () => {
-//     const [width, setWidth] = useState(0); // default width, detect on server.
-//     const handleResize = () => setWidth(window.innerWidth);
-//     useEffect(() => {
-//       window.addEventListener('resize', handleResize);
-//       return () => window.removeEventListener('resize', handleResize);
-//     }, [handleResize]);
-//     return width;
-// };
   const width = useWidth();
 
 	const techArray = [
 		{ type: 'react', icon: <FaReact className='tech-icon' color='#48d8ff' /> },
 		{ type: 'nodejs', icon: <FaNodeJs className='tech-icon' color='#659a60' /> },
-		{ type: 'mysql', icon: <GrMysql className='tech-icon' color='#1a5c87' /> },
+		{ type: 'mysql', icon: <GrMysql className='tech-icon' color='#1a5c87' id="mysql"/> },
 		{ type: 'js', icon: <DiJavascript className='tech-icon' /> },
 		{ type: 'css3', icon: <DiCss3 className='tech-icon' color='#3299f8' id='css' /> },
 		{ type: 'firebase', icon: <img src={firebase} className='tech-icon' id='firebase' /> },
 		{ type: 'sequelize', icon: <img src={sequelize} className='tech-icon' id='firebase' /> },
+		{ type: 'mongo', icon: <DiMongodb className='tech-icon' color='#6cac48' id='mongo'/> },
 	];
 
 	return (
@@ -46,7 +38,7 @@ export default function PortfolioCard(props) {
 			{width > 600 ? (
         // <Fade left={props.left} right={props.right} duration={props.right ? 900 : 500}></Fade>
 				<Link href='/'>
-					<Card className='portfolio-card'>
+					<Card className='portfolio-card clickable'>
 						<Card.Body className='port-card-body'>
 							<div className='port-body-hidden'>
 								<div

@@ -35,14 +35,14 @@ export default function Portfolio() {
 				<header className='smhead'>
 					<section>
 						<img className='profile-img profile-img-sm' src='/images/profile.jpg' alt='Profile Picture' />
-						<h3 className='portfolio-head'>Tanner M. Griffin</h3>
+						<h3 className='portfolio-head'>Recent Work</h3>
 						{/* <div className='border-top'></div> */}
 					</section>
 				</header>
 
 				<PortfolioCard
 					left={true}
-					tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
+					tech={['react', 'nodejs', 'sequelize', 'mysql', 'mongo', 'css3']}
 					dev='Full Stack'
 					title='Autoban'
 					img={'/images/autoban.PNG'}
@@ -51,7 +51,7 @@ export default function Portfolio() {
 				<PortfolioCard
 					right={true}
 					tech={['react', 'nodejs', 'firebase', 'css3']}
-					dev='Front End'
+					dev='Full Stack'
 					title='Party Tracker'
 					subtitle='Gloomhaven: Jaws of the Lion'
 					img={'/images/partytracker.PNG'}
@@ -60,7 +60,7 @@ export default function Portfolio() {
 				<PortfolioCard
 					left={true}
 					tech={['react', 'nodejs', 'firebase', 'css3']}
-					dev='Front End'
+					dev='Full Stack'
 					title='PubIO'
 					img={'/images/pubio.png'}
 					description={`React Native app for planning and \n joining pub crawls`}

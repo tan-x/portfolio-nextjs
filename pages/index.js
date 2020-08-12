@@ -58,7 +58,7 @@ export default function Home() {
           <Flip top cascade>
             <img
               className='profile-img'
-              src={profilePic}
+              src='/images/profile.jpg'
               alt='Profile Picture'
             />
 

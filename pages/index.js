@@ -4,7 +4,7 @@ import Slide from 'react-reveal/Slide';
 import Link from 'next/link'
 import Nav from '../components/Nav';
 import { FaUserCircle, FaBookOpen, FaHandshake } from 'react-icons/fa';
-import profilePic from '../assets/images/profile.jpg';
+// import profilePic from '../assets/images/profile.jpg';
 import Footer from '../components/Footer';
 
 export default function Home() {

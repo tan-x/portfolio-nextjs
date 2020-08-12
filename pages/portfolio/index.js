@@ -3,10 +3,10 @@ import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen } from 'react-icons/fa';
-import profilePic from '../../assets/images/profile.jpg';
-import autoban from '../../assets/images/autoban.png'
-import partytracker from '../../assets/images/partytracker.png'
-import pubio from '../../assets/images/pubio.png'
+// import profilePic from '../../assets/images/profile.jpg';
+// import autoban from '../../assets/images/autoban.png'
+// import partytracker from '../../assets/images/partytracker.png'
+// import pubio from '../../assets/images/pubio.png'
 
 export default function Portfolio() {
 	return (

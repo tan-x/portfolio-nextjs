@@ -15,11 +15,28 @@ body {
 	font-family: 'Montserrat' !important;
 }
 
+#background {
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-repeat: none;
+	/* background: rgba(219, 21, 99, 0.8); */
+	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
+	background: -o-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
+	background: -moz-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
+	background: linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
+}
+
 /* navbar styling */
 nav {
 	font-size: 18px !important;
 	font-family: 'Montserrat' !important;
 	z-index: 100;
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .clickable {
@@ -144,19 +161,21 @@ header.smhead img {
 }
 
 /* main container styling */
+.scroll-container {
+
+	min-height: calc(100vh - 61px);
+	position: fixed;
+	top: 61px;
+}
+
 .container-main {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
 	padding: 40px 0;
-	background: rgba(219, 21, 99, 0.8);
-	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
-	background: -o-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
-	background: -moz-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
-	background: linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
 }
 
 .flex-column {
@@ -242,9 +261,12 @@ p {
 .footer {
 	background-color: white !important;
 	font-size: 30px;
-	height: 80px;
+	height: 60px;
 	margin-top: -50px;
-	padding: 0 15px; 
+	padding: 0 15px;
+	position: absolute;
+	bottom: 0;
+	width: 100%
 }
 
 .footer a {
@@ -348,6 +370,7 @@ p {
 }
 
 .port-role {
+	margin: 4px 10px;
 	font-size: calc(12px + .3vw)
 }
 .port-description {

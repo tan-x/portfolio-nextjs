@@ -134,16 +134,20 @@ nav {
 	color: white;
 	width: 100%;
 	height: 20vh;
-	min-height: 200px;
+	min-height: 190px;
 	background: white;
 	/* background: linear-gradient(0deg, transparent, rgba(245, 245, 245, 0.712), rgba(255, 255, 255, 0.87), rgba(245, 245, 245, 0.692), transparent); */
-	margin: 0 0 -100px;
+	margin: 0 0 -90px;
 	color: black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 5px 10px 5px white;
+	/* box-shadow: 0 5px 10px 5px white; */
 	/* border-bottom: 20px solid #ffff !important; */
+}
+
+#smhead2 {
+	margin: -50px 0 -90px;
 }
 
 header.smhead img {
@@ -318,7 +322,29 @@ p {
 
 .portfolio-head {
 	padding: 10px 10px 20px 37vw;
-	font-weight: bold;
+	font-weight: bolder;
+
+	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.9) 75%, rgba(0, 146, 204, 0.9));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.portfolio-mid {
+	padding: 10px 10px 20px 37vw;
+	font-weight: bolder;
+
+	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.9) 65%, rgba(0, 146, 204, 0.9));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.recentproj {
+	/* background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.9), 80%, rgba(0, 146, 204, 0.9));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent; */
 }
 
 .portfolio-card {
@@ -327,7 +353,7 @@ p {
 	height: 100%;
 	margin: 22px 15px;
 	border-radius: 7px;
-	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.4);
 	border: 0;
 	transition: all .2s ease-in-out;
 }
@@ -371,6 +397,10 @@ p {
 .tech-icon {
 	margin: 0 8px;
 	font-size: calc(20px + .5vw)
+}
+
+.tooltip > .tooltip-inner {
+	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.6), rgba(0, 146, 204, 0.6));
 }
 
 .port-role {

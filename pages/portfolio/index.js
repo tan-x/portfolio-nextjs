@@ -6,7 +6,8 @@ const PortfolioCard = dynamic(() => import('../../components/PortfolioCard'), {
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 // import PortfolioCard from '../../components/PortfolioCard';
-import { FaBookOpen } from 'react-icons/fa';
+import { FaBookOpen, FaCode } from 'react-icons/fa';
+import { FiCode } from 'react-icons/fi';
 // import profilePic from '../../assets/images/profile.jpg';
 // import autoban from '../../assets/images/autoban.png'
 // import partytracker from '../../assets/images/partytracker.png'
@@ -50,20 +51,20 @@ export default function Portfolio() {
           <div className='container-main flex-column' id='port'>
             {/* <!-- Header --> */}
             <header className='smhead'>
-              <section>
+              <section className="recentproj">
                 {/* <img
                   className='profile-img profile-img-sm'
                   src='/images/profile.jpg'
                   alt='Profile Picture'
                 /> */}
-                <h3 className='portfolio-head'>Recent Projects</h3>
+                <h3 className='portfolio-head'><FiCode /> React</h3>
                 {/* <div className='border-top'></div> */}
               </section>
             </header>
 
             <PortfolioCard
               left={true}
-              tech={['react', 'nodejs', 'sequelize', 'mysql', 'mongo', 'css3']}
+              tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
               dev='Full Stack'
               title='Autoban'
               img={'/images/autoban.PNG'}
@@ -78,13 +79,24 @@ export default function Portfolio() {
               img={'/images/partytracker.PNG'}
               description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
             />
+			<header className='smhead' id="smhead2">
+              <section className="recentproj">
+                {/* <img
+                  className='profile-img profile-img-sm'
+                  src='/images/profile.jpg'
+                  alt='Profile Picture'
+                /> */}
+                <h3 className='portfolio-mid'><FiCode /> React Native</h3>
+                {/* <div className='border-top'></div> */}
+              </section>
+            </header>
             <PortfolioCard
               left={true}
               tech={['react', 'nodejs', 'firebase', 'css3']}
               dev='Full Stack'
               title='PubIO'
               img={'/images/pubio.png'}
-              description={`React Native app for planning and \n joining pub crawls`}
+              description={`Social app for joining and \n planning pub crawls`}
             />
             <div className='modal fade' id='myModal'>
               <div className='modal-dialog'>

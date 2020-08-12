@@ -1,7 +1,12 @@
 import Head from 'next/head';
+import dynamic from 'next/dynamic'
+const PortfolioCard = dynamic(
+  () => import('../../components/PortfolioCard'),
+  { ssr: false },
+)
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
-import PortfolioCard from '../../components/PortfolioCard';
+// import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen } from 'react-icons/fa';
 // import profilePic from '../../assets/images/profile.jpg';
 // import autoban from '../../assets/images/autoban.png'
@@ -60,37 +65,6 @@ export default function Portfolio() {
 					img={'/images/pubio.png'}
 					description={`React Native app for planning and \n joining pub crawls`}
 				/>
-
-				{/* <!-- Main/Portfolio --> */}
-				{/* <main className="content-port flex-column boxitem rounded" id="port">
-				<h3><FaBookOpen/> Portfolio</h3>
-				<div className="port-container">
-					<article className="port-item flex-center" id="item1" data-toggle="modal" data-target="#myModal">
-						<h2>React Native App</h2>
-						<img id="img1"  src={require("../assets/images/pubioHoriB.png")} alt="PubIO logo" />
-					</article>
-					<article className="port-item flex-center" id="item2">
-						<h2>Weather<br />Dashboard</h2>
-						<img id="img2" src={require("../assets/images/webSS.png")} alt="Weather Dashboard" />
-					</article>
-					<article className="port-item flex-center" id="item3">
-						<h2>Coding<br />Quiz</h2>
-						<img id="img3" src={require("../assets/images/codequiz.png")} alt="Coding quiz" />
-					</article>
-					<article className="port-item flex-center" id="item4">
-						<h2>React Web App</h2>
-						<img id="img4" src={require("../assets/images/orgmobfull.png")} alt="Organize Moblize and fist"/>
-					</article>
-					<article className="port-item flex-center" id="item5">
-						<h2>Drum<br />Kit</h2>
-						<img id="img5" src={require("../assets/images/drumkit.png")} alt="Web drum kit" />
-					</article>
-					<article className="port-item flex-center" id="item6">
-						<h2>Work Day<br />Scheduler</h2>
-						<img id="img6" src={require("../assets/images/scheduler.png")} alt="Day scheduler" />
-					</article>
-				</div>
-			</main> */}
 				<div className='modal fade' id='myModal'>
 					<div className='modal-dialog'>
 						{/* <!-- Modal content--> */}

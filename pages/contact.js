@@ -44,32 +44,32 @@ export default function Contact() {
         <div
           style={{
             width: '100%',
-            height: 'fit-content',
+            minHeight: 'fit-content',
             height: 'calc(100vh - 61px)',
             position: 'relative',
             top: '61px',
-            overflow: 'scroll',
+            overflow: 'auto',
+            paddingTop: 30
           }}
         >
           <div className='container-main flex-column' id='port'>
             {/* <!-- Header --> */}
-            <header className='smhead'>
+            {/* <header className='smhead3'>
               <section>
                 <img
                   className='profile-img profile-img-sm'
                   src='/images/profile.jpg'
                   alt='Profile Picture'
                 />
-                <h3 className='portfolio-head'>Tanner M. Griffin</h3>
-                <div className='border-top'></div>
+                <h3 className='contact-head'>Tanner M. Griffin</h3>
               </section>
-            </header>
+            </header> */}
 
             {/* <!-- Contact form --> */}
             <main className='content-contact boxitem rounded'>
               {/* <!--Section heading--> */}
               <h3 className='text-center my-4'>
-                <FaEnvelopeOpen /> Contact me
+                <FaEnvelopeOpen style={{marginBottom: 10}}/> Contact me
               </h3>
               {/* <!--Section description--> */}
               {/* <p className='text-center mx-auto mb-5'>

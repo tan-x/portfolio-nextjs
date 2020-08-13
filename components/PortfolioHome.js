@@ -29,14 +29,13 @@ export default function PortfolioHome(props) {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-      console.log(image.src)
 			if (image.current < image.sources.length - 1) {
 				setImage({ ...image, src: image.sources[image.current + 1], current: image.current + 1 });
 			} else {
 				setImage({ ...image, src: image.sources[0], current: 0 });
 			}
-    }, 3000);
-    return () => clearInterval(interval);
+		}, 3000);
+		return () => clearInterval(interval);
 	}, [image.src]);
 
 	const techArray = [
@@ -113,148 +112,148 @@ export default function PortfolioHome(props) {
 		<>
 			{width > 600 ? (
 				// <Fade left={props.left} right={props.right} duration={props.right ? 900 : 500}></Fade>
-				// <Link href='/'>
-				<Card className='portfolio-card clickable'>
-					<Card.Body className='port-card-body'>
-						<div className='port-body-hidden'>
-							<div
-								style={{
-									height: '100%',
-									width: '50%',
-									display: 'flex',
-									flexDirection: 'column',
-									justifyContent: 'space-around',
-									padding: '20px',
-								}}
-							>
-								<div>
-									<h2 style={{ margin: '0 9px 5px' }}>{props.title}</h2>
-									{props.description.split('\n').map((i, index) => {
-										return (
-											<p key={index} className='port-description'>
-												{i}
-											</p>
-										);
-									})}
-								</div>
-
-								<div>
-									<p className='port-role'>{props.dev} Development</p>
-									<p className='port-role'>UI/UX Design</p>
-								</div>
+				<Link href={props.link}>
+					<Card className='portfolio-card clickable'>
+						<Card.Body className='port-card-body'>
+							<div className='port-body-hidden'>
 								<div
 									style={{
-										padding: '5px',
+										height: '100%',
+										width: '50%',
 										display: 'flex',
-										minWidth: 'fit-content',
-										minHeight: 'fit-content',
+										flexDirection: 'column',
+										justifyContent: 'space-around',
+										padding: '20px',
 									}}
 								>
-									{props.tech &&
-										props.tech.map((item, index) => {
-											const foundIndex = techArray.findIndex((el) => el.type === item);
-											if (foundIndex >= 0) {
-												return <div key={index}>{techArray[foundIndex].icon}</div>;
-											}
+									<div>
+										<h2 style={{ margin: '0 9px 5px' }}>{props.title}</h2>
+										{props.description.split('\n').map((i, index) => {
+											return (
+												<p key={index} className='port-description'>
+													{i}
+												</p>
+											);
 										})}
-								</div>
-							</div>
-							{/* <Slide right when={hover}> */}
-							<Fade right>
-								<img
-									onMouseEnter={() => setHover({ right: '-7%', filter: 'opacity(100%)' })}
-									onMouseLeave={() => setHover({ right: '-10%', filter: 'opacity(80%)' })}
-									style={{
-										width: '60%',
-										position: 'absolute',
-										right: hover.right,
-										borderRadius: '10px',
-										boxShadow: '-2px 5px 5px lightgray',
-										transition: 'all .3s',
-										filter: hover.filter,
-									}}
-									src={image.src}
-								/>
-							</Fade>
-							{/* </Slide> */}
-						</div>
-					</Card.Body>
-				</Card>
-			) : (
-				// </Link>
-				// <Link href='/'>
-				<Card className='portfolio-card'>
-					<Card.Body className='port-card-body'>
-						<div className='port-body-mobile'>
-							<div
-								style={{
-									height: '50%',
-									width: '100%',
-									display: 'flex',
-									flexDirection: 'column',
-									justifyContent: 'space-around',
-									padding: '20px',
-								}}
-							>
-								<div>
-									<h3 style={{ margin: '0 9px 5px' }}>{props.title}</h3>
-									{props.description.split('\n').map((i, index) => {
-										return (
-											<p key={index} className='port-description'>
-												{i}
-											</p>
-										);
-									})}
-								</div>
+									</div>
 
-								<div>
-									<p className='port-role'>{props.dev} Development</p>
-									<p className='port-role'>UI/UX Design</p>
+									<div>
+										<p className='port-role'>{props.dev} Development</p>
+										<p className='port-role'>UI/UX Design</p>
+									</div>
+									<div
+										style={{
+											padding: '5px',
+											display: 'flex',
+											minWidth: 'fit-content',
+											minHeight: 'fit-content',
+										}}
+									>
+										{props.tech &&
+											props.tech.map((item, index) => {
+												const foundIndex = techArray.findIndex((el) => el.type === item);
+												if (foundIndex >= 0) {
+													return <div key={index}>{techArray[foundIndex].icon}</div>;
+												}
+											})}
+									</div>
 								</div>
-								<div
-									style={{
-										padding: '5px',
-										display: 'flex',
-										minWidth: 'fit-content',
-										minHeight: 'fit-content',
-									}}
-								>
-									{props.tech &&
-										props.tech.map((item, index) => {
-											const foundIndex = techArray.findIndex((el) => el.type === item);
-											if (foundIndex >= 0) {
-												return <div key={index}>{techArray[foundIndex].icon}</div>;
-											}
-										})}
-								</div>
-							</div>
-							{/* <Slide right when={hover}> */}
-							<div
-								style={{
-									height: 'calc(60px + 36vw)',
-									width: '100%',
-									overflow: 'hidden',
-									position: 'relative',
-								}}
-							>
+								{/* <Slide right when={hover}> */}
 								<Fade right>
 									<img
+										onMouseEnter={() => setHover({ right: '-7%', filter: 'opacity(100%)' })}
+										onMouseLeave={() => setHover({ right: '-10%', filter: 'opacity(80%)' })}
 										style={{
-											width: '100%',
+											width: '60%',
 											position: 'absolute',
 											right: hover.right,
 											borderRadius: '10px',
 											boxShadow: '-2px 5px 5px lightgray',
+											transition: 'all .3s',
+											filter: hover.filter,
 										}}
 										src={image.src}
 									/>
 								</Fade>
+								{/* </Slide> */}
 							</div>
-							{/* </Slide> */}
-						</div>
-					</Card.Body>
-				</Card>
-				// {/* </Link> */}
+						</Card.Body>
+					</Card>
+				</Link>
+			) : (
+				<Link href={props.link}>
+					<Card className='portfolio-card'>
+						<Card.Body className='port-card-body'>
+							<div className='port-body-mobile'>
+								<div
+									style={{
+										height: '50%',
+										width: '100%',
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'space-around',
+										padding: '20px',
+									}}
+								>
+									<div>
+										<h3 style={{ margin: '0 9px 5px' }}>{props.title}</h3>
+										{props.description.split('\n').map((i, index) => {
+											return (
+												<p key={index} className='port-description'>
+													{i}
+												</p>
+											);
+										})}
+									</div>
+
+									<div>
+										<p className='port-role'>{props.dev} Development</p>
+										<p className='port-role'>UI/UX Design</p>
+									</div>
+									<div
+										style={{
+											padding: '5px',
+											display: 'flex',
+											minWidth: 'fit-content',
+											minHeight: 'fit-content',
+										}}
+									>
+										{props.tech &&
+											props.tech.map((item, index) => {
+												const foundIndex = techArray.findIndex((el) => el.type === item);
+												if (foundIndex >= 0) {
+													return <div key={index}>{techArray[foundIndex].icon}</div>;
+												}
+											})}
+									</div>
+								</div>
+								{/* <Slide right when={hover}> */}
+								<div
+									style={{
+										height: 'calc(60px + 36vw)',
+										width: '100%',
+										overflow: 'hidden',
+										position: 'relative',
+									}}
+								>
+									<Fade right>
+										<img
+											style={{
+												width: '100%',
+												position: 'absolute',
+												right: hover.right,
+												borderRadius: '10px',
+												boxShadow: '-2px 5px 5px lightgray',
+											}}
+											src={image.src}
+										/>
+									</Fade>
+								</div>
+								{/* </Slide> */}
+							</div>
+						</Card.Body>
+					</Card>
+				</Link>
 			)}
 		</>
 	);

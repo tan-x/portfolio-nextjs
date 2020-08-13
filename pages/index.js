@@ -146,9 +146,9 @@ export default function Home() {
 									</form>
 								</section> */}
 									<PortfolioHome
-										link={'/portfolio'}
+										link='/portfolio'
 										left={true}
-										tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3', 'firebase', 'mongo']}
+										tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3', 'firebase']}
 										dev='Full Stack'
 										title='Portfolio'
 										img={'/images/autoban.PNG'}

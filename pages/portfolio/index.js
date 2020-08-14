@@ -70,6 +70,7 @@ export default function Portfolio() {
 						</header>
 
 						<PortfolioCard
+							link='/portfolio/autoban'
 							left={true}
 							tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
 							dev='Full Stack'
@@ -78,6 +79,7 @@ export default function Portfolio() {
 							description={'A project management solution \n for coders'}
 						/>
 						<PortfolioCard
+							link='/portfolio'
 							right={true}
 							tech={['react', 'nodejs', 'firebase', 'css3']}
 							dev='Full Stack'
@@ -94,6 +96,7 @@ export default function Portfolio() {
 							</section>
 						</header> */}
 						<PortfolioCard
+							link='/portfolio'
 							left={true}
 							tech={['react', 'nodejs', 'firebase', 'css3']}
 							dev='Full Stack'

@@ -51,9 +51,9 @@ export default function Nav() {
 
       
       <Collapse in={navState}>
-      {/* <div
+      <div
         className={width > 992 ? 'navbar-collapse' : 'collapse navbar-collapse'}
-      > */}
+      >
         <ul className='navbar-nav'>
           <li className={route === '/' ? 'nav-item active' : 'nav-item'}>
             <a className='nav-link navbar-name' href='/'>
@@ -104,7 +104,7 @@ export default function Nav() {
             </Dropdown>
           </li>
         </ul>
-      {/* </div> */}
+      </div>
       </Collapse>
     </nav>
   );

@@ -6,7 +6,7 @@ const transporter = nodemailer.createTransport({
 	auth: {
 		type: 'login',
 		user: 'tanx@tannermgriffin.com',
-		pass: 't038T067@',
+		pass: process.env.EMAIL_PASSWORD,
 	},
 });
 
@@ -21,7 +21,7 @@ transporter.verify((error, success) => {
 const send = ({ email, name, text }) => {
 	const from = name && email ? `${name} <${email}>` : `${name || email}`;
 	const message = {
-		from: 'Admin <admin@tannermgriffin.com>',
+		from: 'Admin <tanx@tannermgriffin.com>',
 		to: 'tanx@tannermgriffin.com',
 		subject: `New message from ${from}`,
 		text,

@@ -527,7 +527,7 @@ p {
 }
 
 /* scrollbar */
-.scrollcontainer::-webkit-scrollbar {
+.scrollcontainer::-webkit-scrollbar, #background::-webkit-scrollbar {
 	display: none;
 }
 

@@ -1,15 +1,22 @@
 // import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dropdown, Collapse } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import useWidth from './hooks/useWidth';
 
-export default function Nav() {
+export default function Nav(props) {
 	const [navState, setNavState] = useState(false);
 	const route = useRouter().route;
 	const width = useWidth();
+
+	useEffect (() => {
+		if (props.scroll) {
+			setNavState(false)
+			props.setscroll(false);
+		}
+	}, [props.scroll])
 
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark sticky'>

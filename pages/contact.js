@@ -12,7 +12,8 @@ export default function Contact() {
 	const initialEmail = { name: '', email: '', message: '' };
 	const [email, setEmail] = useState(initialEmail);
 	const [show, setShow] = useState({ modal: false, success: false });
-	let [containermain, setContainermain] = useState('container-main flex-column');
+	const [scroll, setScroll] = useState(false);
+	const [containermain, setContainermain] = useState('container-main flex-column');
 
 	useEffect(() => {
 		console.log(isMobile);
@@ -35,6 +36,14 @@ export default function Contact() {
 		setShow({ modal: false, success: false });
 		setEmail(initialEmail);
 	};
+
+	const handleScroll = () => {
+		if (!scroll) {
+			setScroll(true);
+		}
+		if (Nav.navState) {
+		}
+	}
 
 	return (
 		<>
@@ -61,12 +70,12 @@ export default function Contact() {
 			</Head>
 
 			<div id='background'>
-				<Nav />
-				<div className='scrollcontainer'>
+				<Nav scroll={scroll} setscroll={setScroll}/>
+				<div className='scrollcontainer' onScroll={handleScroll}>
 					<div
 						className={containermain}
 						id='port'
-						style={{ justifyContent: 'center', height: '100%' }}
+						style={{ justifyContent: 'center'}}
 					>
 						{/* <!-- Header --> */}
 						{/* <header className='smhead3'>
@@ -82,20 +91,19 @@ export default function Contact() {
 
 						{/* <!-- Contact form --> */}
 						<Card className='portfolio-card' id='contact-form'>
-							<Card.Body className='port-card-body' style={{ padding: '30px 20px' }}>
+							<Card.Body className='port-card-body' style={{ padding: '1vh 20px' }}>
 								{/* <!--Section heading--> */}
 								<h3 className='text-center my-4'>
 									<FaEnvelopeOpen style={{ marginBottom: 6 }} /> Contact me
 								</h3>
 								{/* <!--Section description--> */}
-								{/* <p className='text-center mx-auto mb-5'>
-						Do you have any questions? Please do not hesitate to contact me directly. I will come
-						back to you within a matter of hours to help you.
-					</p> */}
+								<p className='text-center mx-auto mb-3'>
+						Please feel free to contact me if you have any questions or are interested in collaborating.
+					</p>
 
 								<div className='row'>
 									{/* <!--Grid column--> */}
-									<div className='col-xl-8 mb-md-0 mb-5 flex-column'>
+									<div className='col-sm-8 mb-md-0 mb-5 flex-column'>
 										<form id='contact-form' name='contact-form' action='#' method='POST'>
 											{/* <!--Grid row--> */}
 											<div className='row'>
@@ -179,7 +187,7 @@ export default function Contact() {
 									{/* <!--Grid column--> */}
 
 									{/* <!--Grid column--> */}
-									<div className='col-xl-4 text-center flex-center '>
+									<div className='col-sm-4 text-center flex-center '>
 										<ul className='list-unstyled mb-0 details'>
 											<li>
 												<FaMapMarkerAlt className='fas fa-map-marker-alt fa-2x' />

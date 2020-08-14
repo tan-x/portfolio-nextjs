@@ -50,6 +50,10 @@ nav {
 	flex-direction: row;
 }
 
+.nav-item {
+	margin: 0 5px!important;
+}
+
 @media (max-width: 992px) {
 	.navbar-expand-lg .navbar-nav {
 		-ms-flex-direction: row;
@@ -494,6 +498,7 @@ p {
 
 #contact-form:hover {
 	transform: scale(1)!important;
+	transition: all 0s;
 }
 
 .port-card-body {

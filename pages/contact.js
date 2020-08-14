@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Card } from 'react-bootstrap';
 import { isMobile } from 'react-device-detect';
 import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 // import profilePic from '/images/profile.jpg'
@@ -13,12 +13,12 @@ export default function Contact() {
 	const [email, setEmail] = useState(initialEmail);
 	const [show, setShow] = useState({ modal: false, success: false });
 	let [containermain, setContainermain] = useState('container-main flex-column');
-  
+
 	useEffect(() => {
-	  console.log(isMobile);
-	  if (isMobile) {
-		setContainermain('container-main flex-column ios');
-	  } 
+		console.log(isMobile);
+		if (isMobile) {
+			setContainermain('container-main flex-column ios');
+		}
 	}, []);
 
 	const handleEmailSend = () => {
@@ -54,15 +54,20 @@ export default function Contact() {
 					integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
 					crossorigin='anonymous'
 				/>
-				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />				<script type="text/javascript" src="/static/inobounce.js"></script>
-				<script type="text/javascript" src="/static/inobounce.js"></script>
+				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />{' '}
+				<script type='text/javascript' src='/static/inobounce.js'></script>
+				<script type='text/javascript' src='/static/inobounce.js'></script>
 				<title>Tanner M. Griffin</title>
 			</Head>
 
 			<div id='background'>
 				<Nav />
 				<div className='scrollcontainer'>
-					<div className={containermain} id='port'>
+					<div
+						className={containermain}
+						id='port'
+						style={{ justifyContent: 'center', height: '100%' }}
+					>
 						{/* <!-- Header --> */}
 						{/* <header className='smhead3'>
               <section>
@@ -76,63 +81,62 @@ export default function Contact() {
             </header> */}
 
 						{/* <!-- Contact form --> */}
-						<main className='content-contact boxitem rounded'>
-							{/* <!--Section heading--> */}
-							<h3 className='text-center my-4'>
-								<FaEnvelopeOpen style={{ marginBottom: 6 }} /> Contact me
-							</h3>
-							{/* <!--Section description--> */}
-							{/* <p className='text-center mx-auto mb-5'>
+						<Card className='portfolio-card' id='contact-form'>
+							<Card.Body className='port-card-body' style={{ padding: '30px 20px' }}>
+								{/* <!--Section heading--> */}
+								<h3 className='text-center my-4'>
+									<FaEnvelopeOpen style={{ marginBottom: 6 }} /> Contact me
+								</h3>
+								{/* <!--Section description--> */}
+								{/* <p className='text-center mx-auto mb-5'>
 						Do you have any questions? Please do not hesitate to contact me directly. I will come
 						back to you within a matter of hours to help you.
 					</p> */}
 
-							<div className='row'>
-								{/* <!--Grid column--> */}
-								<div className='col-xl-9 mb-md-0 mb-5'>
-									<form id='contact-form' name='contact-form' action='#' method='POST'>
-										{/* <!--Grid row--> */}
-										<div className='row'>
-											{/* <!--Grid column--> */}
-											<div className='col-md-6'>
-												<div className='md-form mb-0'>
-													<input
-														type='text'
-														id='name'
-														name='name'
-														className='form-control'
-														onChange={(e) => setEmail({ ...email, name: e.target.value })}
-														value={email.name}
-													/>
-													<label htmlFor='name' className=''>
-														Your name
-													</label>
+								<div className='row'>
+									{/* <!--Grid column--> */}
+									<div className='col-xl-8 mb-md-0 mb-5 flex-column'>
+										<form id='contact-form' name='contact-form' action='#' method='POST'>
+											{/* <!--Grid row--> */}
+											<div className='row'>
+												{/* <!--Grid column--> */}
+												<div className='col-md-6'>
+													<div className='md-form mb-0'>
+														<input
+															placeholder='Name'
+															type='text'
+															id='name'
+															name='name'
+															className='form-control input-back'
+															onChange={(e) => setEmail({ ...email, name: e.target.value })}
+															value={email.name}
+														/>
+														<label htmlFor='name' className=''></label>
+													</div>
 												</div>
-											</div>
-											{/* <!--Grid column--> */}
+												{/* <!--Grid column--> */}
 
-											{/* <!--Grid column--> */}
-											<div className='col-md-6'>
-												<div className='md-form mb-0'>
-													<input
-														type='text'
-														id='email'
-														name='email'
-														className='form-control'
-														onChange={(e) => setEmail({ ...email, email: e.target.value })}
-														value={email.email}
-													/>
-													<label htmlFor='email' className=''>
-														Your email
-													</label>
+												{/* <!--Grid column--> */}
+												<div className='col-md-6'>
+													<div className='md-form mb-0'>
+														<input
+															placeholder='Email'
+															type='text'
+															id='email'
+															name='email'
+															className='form-control input-back2'
+															onChange={(e) => setEmail({ ...email, email: e.target.value })}
+															value={email.email}
+														/>
+														<label htmlFor='email' className=''></label>
+													</div>
 												</div>
+												{/* <!--Grid column--> */}
 											</div>
-											{/* <!--Grid column--> */}
-										</div>
-										{/* <!--Grid row--> */}
+											{/* <!--Grid row--> */}
 
-										{/* <!--Grid row--> */}
-										{/* <div className='row'>
+											{/* <!--Grid row--> */}
+											{/* <div className='row'>
 											<div className='col-md-12'>
 												<div className='md-form mb-0'>
 													<input type='text' id='subject' name='subject' className='form-control' onChange={(e) => setEmail({...email, subject: e.target.value})}/>
@@ -142,54 +146,56 @@ export default function Contact() {
 												</div>
 											</div>
 										</div> */}
-										{/* <!--Grid row--> */}
+											{/* <!--Grid row--> */}
 
-										{/* <!--Grid row--> */}
-										<div className='row'>
-											{/* <!--Grid column--> */}
-											<div className='col-md-12'>
-												<div className='md-form'>
-													<textarea
-														id='message'
-														name='message'
-														rows='4'
-														className='form-control md-textarea'
-														onChange={(e) => setEmail({ ...email, message: e.target.value })}
-														value={email.message}
-													></textarea>
-													<label htmlFor='message'>Your message</label>
+											{/* <!--Grid row--> */}
+											<div className='row'>
+												{/* <!--Grid column--> */}
+												<div className='col-md-12'>
+													<div className='md-form'>
+														<textarea
+															placeholder='Your message'
+															id='message'
+															name='message'
+															rows='4'
+															className='form-control md-textarea input-back3'
+															onChange={(e) => setEmail({ ...email, message: e.target.value })}
+															value={email.message}
+														></textarea>
+														<label htmlFor='message'></label>
+													</div>
 												</div>
 											</div>
-										</div>
-										{/* <!--Grid row--> */}
-									</form>
+											{/* <!--Grid row--> */}
+										</form>
 
-									{/* <div className='text-center text-md-left' > */}
-									<Button variant='primary' onClick={handleEmailSend}>
-										Send
-									</Button>
-									{/* </div> */}
-									<div className='status'></div>
+										{/* <div className='text-center text-md-left' > */}
+										<Button variant='primary' onClick={handleEmailSend}>
+											Send
+										</Button>
+										{/* </div> */}
+										<div className='status'></div>
+									</div>
+									{/* <!--Grid column--> */}
+
+									{/* <!--Grid column--> */}
+									<div className='col-xl-4 text-center flex-center '>
+										<ul className='list-unstyled mb-0 details'>
+											<li>
+												<FaMapMarkerAlt className='fas fa-map-marker-alt fa-2x' />
+												<p>Austin, TX 78745, USA</p>
+											</li>
+
+											<li>
+												<FaEnvelope className='fas fa-envelope mt-4 fa-2x' />
+												<p>tanx&#8203;@tannermgriffin.com</p>
+											</li>
+										</ul>
+									</div>
+									{/* <!--Grid column--> */}
 								</div>
-								{/* <!--Grid column--> */}
-
-								{/* <!--Grid column--> */}
-								<div className='col-xl-3 text-center flex-center'>
-									<ul className='list-unstyled mb-0 details'>
-										<li>
-											<FaMapMarkerAlt className='fas fa-map-marker-alt fa-2x' />
-											<p>Austin, TX 78745, USA</p>
-										</li>
-
-										<li>
-											<FaEnvelope className='fas fa-envelope mt-4 fa-2x' />
-											<p>tanx&#8203;@tannermgriffin.com</p>
-										</li>
-									</ul>
-								</div>
-								{/* <!--Grid column--> */}
-							</div>
-						</main>
+							</Card.Body>
+						</Card>
 					</div>
 					<Modal show={show.modal} onHide={handleClose}>
 						<Modal.Header closeButton>

@@ -50,6 +50,10 @@ nav {
 	flex-direction: row;
 }
 
+.nav-item {
+	margin: 0 5px!important;
+}
+
 @media (max-width: 992px) {
 	.navbar-expand-lg .navbar-nav {
 		-ms-flex-direction: row;
@@ -327,7 +331,7 @@ h4 {
 .btn-primary {
 	border-color: white;
 	margin-bottom: 5px;
-	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.4), rgba(229, 57, 53, 0.4));
+	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 1), rgba(229, 57, 53, 1));
 	-webkit-text-fill-color: white;
 }
 
@@ -400,10 +404,6 @@ p {
 	transition: all .2s ease-in-out;
 }
 
-.tech-body {
-
-}
-
 .boxitem {
 	padding: 30px 30px !important;
 	background-color: rgba(245, 245, 245, 0.1);
@@ -426,6 +426,18 @@ p {
 	font-size: 0.8em;
 	margin: 30px 35px !important;
 	padding: 40px 30px !important;
+}
+
+.input-back {
+	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.05), rgba(0, 146, 204, 0.05))
+}
+
+.input-back2 {
+	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.05), rgba(229, 57, 53, 0.05))
+}
+
+.input-back3 {
+	background: linear-gradient(45deg, rgba(229, 57, 53, 0.05), rgba(0, 146, 204, 0.05), rgba(229, 57, 53, 0.05))
 }
 
 .details {
@@ -478,6 +490,15 @@ p {
 .portfolio-card:hover {
 	transform: scale(1.009);
 	transition: all .2s ease-in-out;
+}
+
+#contact-form {
+	height: fit-content;
+}
+
+#contact-form:hover {
+	transform: scale(1)!important;
+	transition: all 0s;
 }
 
 .port-card-body {

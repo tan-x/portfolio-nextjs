@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Dropdown, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaReact, FaNodeJs, FaCss3Alt, FaGithub } from 'react-icons/fa';
 import { DiJavascript, DiCss3, DiMongodb } from 'react-icons/di';
+import { FiCode } from 'react-icons/fi';
 import { GrMysql } from 'react-icons/gr';
 import firebase from '../assets/images/icons8-firebase.svg';
 import sequelize from '../assets/images/sequelize.png';
@@ -127,7 +128,7 @@ export default function PortfolioHome(props) {
 									}}
 								>
 									<div>
-										<h2 style={{ margin: '0 9px 5px' }}>{props.title}</h2>
+										<h2 style={{ margin: '0 9px 5px' }}>{props.title} <FiCode style={{ margin: '0 0 3px' }}/></h2>
 										{props.description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>
@@ -174,6 +175,7 @@ export default function PortfolioHome(props) {
 										}}
 										src={image.src}
 									/>
+                  
 								</Fade>
 								{/* </Slide> */}
 							</div>
@@ -196,7 +198,7 @@ export default function PortfolioHome(props) {
 									}}
 								>
 									<div>
-										<h3 style={{ margin: '0 9px 5px' }}>{props.title}</h3>
+										<h3 style={{ margin: '0 9px 5px' }}>{props.title} <FiCode style={{ margin: '0 0 3px' }}/></h3>
 										{props.description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>

@@ -8,6 +8,7 @@ const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
 	ssr: false,
 });
 import { FaUserCircle, FaBookOpen, FaHandshake } from 'react-icons/fa';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
 // import profilePic from '../assets/images/profile.jpg';
 import Footer from '../components/Footer';
 
@@ -44,9 +45,11 @@ export default function Home() {
 					<main className='container-main flex-column' id='index'>
 						{/* <!-- Header --> */}
 						<header className='masthead'>
+              <div className='mastheadback'/>
 							{/* <Flip top cascade> */}
+              <Fade duration={4000}>
 							<img className='profile-img' src='/images/profile.jpg' alt='Profile Picture' />
-
+              </Fade>
 							<section className='intro-text'>
 								<h1>
 									<Flip left cascade>
@@ -55,7 +58,7 @@ export default function Home() {
 										</span>
 									</Flip>
 								</h1>
-								<div className='border-top'></div>
+								{/* <div className='border-top'></div> */}
 
 								<h3>
 									<Flip left cascade>
@@ -78,14 +81,14 @@ export default function Home() {
 										>
 											<header>
 												<h3>
-													<FaUserCircle /> About
+													<BsFillPersonLinesFill style={{ margin: '0 0 3px' }}/> About
 												</h3>
 											</header>
 											<p>
-												Tanner Griffin is a Full Stack Web Developer with years of experience
-												managing a team and delivering financial services to business clients. His
-												background in audio engineering, electronics, financial operations, and
-												management all lend to his ability to manage large projects and provide a
+												I am a <b>Full Stack Web Developer</b> based in <b>Austin, TX</b> with years of experience
+												managing a team and delivering financial services to business clients. My
+												background in coding, audio engineering, electronics, and
+												management all lend to my ability to conduct large projects and provide a
 												quality product to the customer.
 											</p>
 											<a className='btn btn-primary' href='/TGriffin_resume.pdf' target='_blank'>
@@ -94,7 +97,7 @@ export default function Home() {
 										</section>
 
 										{/* <!-- Services  --> */}
-										<section
+										{/* <section
 											className='content-main flex-column boxitem rounded col-xl justify-content-xl-around'
 											id='services'
 										>
@@ -113,7 +116,7 @@ export default function Home() {
 												Donec pharetra, lorem. Lorem ipsum dolor sit amet, consectetur adipiscing
 												elit. Integer id tempus nisi. In vel metus diam.
 											</p>
-										</section>
+										</section> */}
 									</Fade>
 								</div>
 

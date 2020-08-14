@@ -16,7 +16,7 @@ body {
 }
 
 #background {
-	overflow-y: auto;
+	overflow-y: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -45,7 +45,8 @@ nav {
 .navbar-nav {
 	width: fit-content !important;
 	padding: 0 10px;
-	background-color: rgba(184, 184, 184, 0.1);
+	/* border-radius: 10px; */
+	/* background-color: rgba(184, 184, 184, 0.1); */
 	flex-direction: row;
 }
 
@@ -71,6 +72,15 @@ nav {
 	color: rgba(255, 255, 255, 0.9);
 	border-color: rgba(255, 255, 255, 0.9);
 	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.2), rgba(229, 57, 53, 0.4));
+}
+
+.navbar-toggler {
+    padding: .15rem .55rem;
+}
+
+.navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
 }
 
 .navbar-toggler:hover,
@@ -129,9 +139,25 @@ nav {
 
 /* profile header */
 .masthead {
+	width: 100%;
+	/* background-color: rgba(68, 67, 67, 0.1); */
 	margin-top: 20px;
 	text-align: center;
 }
+
+.mastheadback {
+	width:100%;
+	max-width: 800px;
+	height: 300px;
+	border-radius: 0 0 100% 100%;
+	background-color: rgba(53, 53, 53, 0.103);
+	margin-top:-200px;
+	position: absolute;
+	top: 40;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
 .masthead img {
 	transition: all 0.2s ease-in-out;
 	display: block;
@@ -148,8 +174,8 @@ nav {
 .smhead {
 	color: white;
 	width: 100%;
-	height: 20vh;
-	min-height: 150px;
+	height: 16vh;
+	min-height: 160px;
 	background: white;
 	/* background: linear-gradient(0deg, transparent, rgba(245, 245, 245, 0.712), rgba(255, 255, 255, 0.87), rgba(245, 245, 245, 0.692), transparent); */
 	margin: 0 0 -90px;
@@ -270,9 +296,15 @@ header.smhead3 img {
 }
 
 .content-main {
-	max-width: 1200px;
-	font-size: 0.8em;
-	margin: 30px 35px 30px !important;
+	width: 80vw;
+	max-width: 850px;
+	height: 100%;
+	margin: 22px 15px;
+	border-radius: 7px;
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.198);
+	border: 0;
+	transition: all .2s ease-in-out;
+	font-size: .9em;
 }
 
 h4 {
@@ -374,12 +406,8 @@ p {
 	width: 80vw;
 	max-width: 850px;
 	height: 100%;
+	display: flex;
 	/* padding: 10px 10px 20px 37vw; */
-	font-weight: bolder;
-	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.9) 55%, rgba(0, 146, 204, 0.9));
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
 
 .portfolio-mid {
@@ -389,9 +417,10 @@ p {
 
 .recentproj {
 	width: fit-content;
-	margin-top: calc(60px + .5vw);
+	margin-top: calc(40px + .5vw + .4vh);
 	margin-left: auto;
 	margin-right: 4px;
+	margin-bottom: auto;
 	font-weight: bolder;
 	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.9) 55%, rgba(0, 146, 204, 0.9));
 	-webkit-background-clip: text;

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
-import Nav from '../components/Nav';
+import Nav, {navState} from '../components/Nav';
 import { isMobile } from 'react-device-detect';
 const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
   ssr: false,
@@ -15,7 +15,8 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  let [containermain, setContainermain] = useState('container-main flex-column');
+  const [containermain, setContainermain] = useState('container-main flex-column');
+  const [scroll, setScroll] = useState(false)
 
   useEffect(() => {
     console.log(isMobile);
@@ -23,6 +24,14 @@ export default function Home() {
       setContainermain('container-main flex-column ios');
     } 
   }, []);
+
+  const handleScroll = () => {
+	  if (!scroll) {
+		  setScroll(true);
+	  }
+	  if (Nav.navState) {
+	  }
+  }
 
   return (
     <>
@@ -68,8 +77,8 @@ export default function Home() {
         <title>Tanner M. Griffin</title>
       </Head>
       <div id='background'>
-        <Nav />
-        <div className='scrollcontainer'>
+        <Nav scroll={scroll} setscroll={setScroll}/>
+        <div className='scrollcontainer' onScroll={handleScroll}>
           <main className={containermain} id='index'>
             {/* <!-- Header --> */}
             <header className='masthead'>

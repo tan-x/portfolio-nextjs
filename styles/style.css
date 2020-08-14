@@ -346,6 +346,7 @@ p {
 /* footer */
 .footer {
 	background-color: white !important;
+	box-shadow: -2px -4px 20px rgba(0, 0, 0, 0.1);
 	font-size: 30px;
 	height: 50px;
 	margin-top: -50px;

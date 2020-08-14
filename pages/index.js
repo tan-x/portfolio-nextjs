@@ -3,8 +3,10 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 import Link from 'next/link';
-import Nav, {navState} from '../components/Nav';
+import Nav from '../components/Nav';
+import TechCard from '../components/TechCard'
 import { isMobile } from 'react-device-detect';
 const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
   ssr: false,
@@ -16,13 +18,15 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   const [containermain, setContainermain] = useState('container-main flex-column');
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(false);
+  const [header, setHeader] = useState(-120)
 
   useEffect(() => {
     console.log(isMobile);
     if (isMobile) {
       setContainermain('container-main flex-column ios');
-    } 
+	}
+	setHeader(30)
   }, []);
 
   const handleScroll = () => {
@@ -82,15 +86,15 @@ export default function Home() {
           <main className={containermain} id='index'>
             {/* <!-- Header --> */}
             <header className='masthead'>
-              <div className='mastheadback' />
+				<div className='mastheadback' style={{top: header}}/>
               {/* <Flip top cascade> */}
-              <Fade duration={4000}>
+              <Slide top duration={2000}>
                 <img
                   className='profile-img'
                   src='/images/profile.jpg'
                   alt='Profile Picture'
                 />
-              </Fade>
+              </Slide>
               <section className='intro-text'>
                 <h1>
                   <Flip left cascade>
@@ -146,6 +150,8 @@ export default function Home() {
                       </a>
                     </section>
 
+
+
                     {/* <!-- Services  --> */}
                     {/* <section
 											className='content-main flex-column boxitem rounded col-xl justify-content-xl-around'
@@ -170,7 +176,9 @@ export default function Home() {
                   </Fade>
                 </div>
 
+				<TechCard />
                 <div className='row justify-content-xl-center'>
+
                   {/* <!-- Portfolio Intro --> */}
                   {/* <section
 									className='content-main flex-column boxitem rounded col-xl justify-content-xl-around'
@@ -192,14 +200,7 @@ export default function Home() {
                   <PortfolioHome
                     link='/portfolio'
                     left={true}
-                    tech={[
-                      'react',
-                      'nodejs',
-                      'sequelize',
-                      'mysql',
-                      'css3',
-                      'firebase',
-                    ]}
+                    tech={[]}
                     dev='Full Stack'
                     title='Portfolio'
                     img={'/images/autoban.PNG'}

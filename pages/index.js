@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 import Link from 'next/link';
 import Nav from '../components/Nav';
 import TechCard from '../components/TechCard'
@@ -17,13 +18,15 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   const [containermain, setContainermain] = useState('container-main flex-column');
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(false);
+  const [header, setHeader] = useState(-120)
 
   useEffect(() => {
     console.log(isMobile);
     if (isMobile) {
       setContainermain('container-main flex-column ios');
-    } 
+	}
+	setHeader(30)
   }, []);
 
   const handleScroll = () => {
@@ -83,15 +86,15 @@ export default function Home() {
           <main className={containermain} id='index'>
             {/* <!-- Header --> */}
             <header className='masthead'>
-              <div className='mastheadback' />
+				<div className='mastheadback' style={{top: header}}/>
               {/* <Flip top cascade> */}
-              <Fade duration={4000}>
+              <Slide top duration={2000}>
                 <img
                   className='profile-img'
                   src='/images/profile.jpg'
                   alt='Profile Picture'
                 />
-              </Fade>
+              </Slide>
               <section className='intro-text'>
                 <h1>
                   <Flip left cascade>

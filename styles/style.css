@@ -387,6 +387,22 @@ p {
 }
 
 /* section box backgrounds */
+
+.tech-card {
+	width: 80vw;
+	max-width: 850px;
+	height: fit-content;
+	margin: 22px 15px;
+	border-radius: 7px;
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.4);
+	border: 0;
+	transition: all .2s ease-in-out;
+}
+
+.tech-body {
+
+}
+
 .boxitem {
 	padding: 30px 30px !important;
 	background-color: rgba(245, 245, 245, 0.1);
@@ -496,11 +512,17 @@ p {
 
 .tech-icon {
 	margin: 0 8px;
-	font-size: calc(20px + .5vw)
+	font-size: calc(20px + .5vw);
+	transition: all .2s ease-in-out;
+}
+
+.tech-icon:hover {
+	transform: scale(1.1);
+	transition: all .2s ease-in-out;
 }
 
 .tooltip > .tooltip-inner {
-	background: -webkit-linear-gradient(45deg, rgba(229, 57, 53, 0.6), rgba(0, 146, 204, 0.6));
+	background: -webkit-linear-gradient(45deg, rgb(224, 157, 156), rgb(136, 185, 204));
 }
 
 .port-role {

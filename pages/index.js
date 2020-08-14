@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
-import Nav, {navState} from '../components/Nav';
+import Nav from '../components/Nav';
+import TechCard from '../components/TechCard'
 import { isMobile } from 'react-device-detect';
 const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
   ssr: false,
@@ -146,6 +147,8 @@ export default function Home() {
                       </a>
                     </section>
 
+
+
                     {/* <!-- Services  --> */}
                     {/* <section
 											className='content-main flex-column boxitem rounded col-xl justify-content-xl-around'
@@ -170,7 +173,9 @@ export default function Home() {
                   </Fade>
                 </div>
 
+				<TechCard />
                 <div className='row justify-content-xl-center'>
+
                   {/* <!-- Portfolio Intro --> */}
                   {/* <section
 									className='content-main flex-column boxitem rounded col-xl justify-content-xl-around'
@@ -192,14 +197,7 @@ export default function Home() {
                   <PortfolioHome
                     link='/portfolio'
                     left={true}
-                    tech={[
-                      'react',
-                      'nodejs',
-                      'sequelize',
-                      'mysql',
-                      'css3',
-                      'firebase',
-                    ]}
+                    tech={[]}
                     dev='Full Stack'
                     title='Portfolio'
                     img={'/images/autoban.PNG'}

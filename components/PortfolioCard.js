@@ -93,7 +93,7 @@ export default function PortfolioCard(props) {
     <>
       {width > 600 ? (
         // <Fade left={props.left} right={props.right} duration={props.right ? 900 : 500}></Fade>
-        <Link href='/'>
+        // <Link href='/'>
           <Card className='portfolio-card clickable'>
             <Card.Body className='port-card-body'>
               <div className='port-body-hidden'>
@@ -168,9 +168,9 @@ export default function PortfolioCard(props) {
               </div>
             </Card.Body>
           </Card>
-        </Link>
+        // </Link>
       ) : (
-        <Link href='/'>
+        // <Link href='/'>
           <Card className='portfolio-card'>
             <Card.Body className='port-card-body'>
               <div className='port-body-mobile'>
@@ -246,7 +246,7 @@ export default function PortfolioCard(props) {
               </div>
             </Card.Body>
           </Card>
-        </Link>
+        // {/* </Link> */}
       )}
     </>
   );

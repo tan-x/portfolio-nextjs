@@ -116,7 +116,7 @@ export default function Contact() {
 													<textarea
 														id='message'
 														name='message'
-														rows='2'
+														rows='3'
                             className='form-control md-textarea'
                             onChange={(e) => setEmail({...email, message: e.target.value})}
 													></textarea>

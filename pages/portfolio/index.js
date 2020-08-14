@@ -36,15 +36,17 @@ export default function Portfolio() {
 					<div className='container-main flex-column' id='port'>
 						{/* <!-- Header --> */}
 						<header className='smhead'>
-							<section className='recentproj'>
+							<section className='portfolio-head'>
 								{/* <img
                   className='profile-img profile-img-sm'
                   src='/images/profile.jpg'
                   alt='Profile Picture'
                 /> */}
-								<h3 className='portfolio-head'>
-									<FiCode /> Recent Projects
-								</h3>
+								<div className="recentproj">
+									<h3 >
+										<FiCode /> Recent Projects
+									</h3>
+								</div>
 								{/* <div className='border-top'></div> */}
 							</section>
 						</header>

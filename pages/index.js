@@ -5,7 +5,7 @@ import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
 import Nav from '../components/Nav';
-import { isIOS } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
   ssr: false,
 });
@@ -18,8 +18,8 @@ export default function Home() {
   let [containermain, setContainermain] = useState('container-main flex-column');
 
   useEffect(() => {
-    console.log(isIOS);
-    if (isIOS) {
+    console.log(isMobile);
+    if (isMobile) {
       setContainermain('container-main flex-column ios');
     } 
   }, []);

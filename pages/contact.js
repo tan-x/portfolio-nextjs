@@ -4,7 +4,7 @@ import axios from 'axios';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { Modal, Button } from 'react-bootstrap';
-import { isIOS } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 // import profilePic from '/images/profile.jpg'
 
@@ -15,8 +15,8 @@ export default function Contact() {
 	let [containermain, setContainermain] = useState('container-main flex-column');
   
 	useEffect(() => {
-	  console.log(isIOS);
-	  if (isIOS) {
+	  console.log(isMobile);
+	  if (isMobile) {
 		setContainermain('container-main flex-column ios');
 	  } 
 	}, []);

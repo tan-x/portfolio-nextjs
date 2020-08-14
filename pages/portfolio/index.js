@@ -9,7 +9,7 @@ import Footer from '../../components/Footer';
 // import PortfolioCard from '../../components/PortfolioCard';
 import { FaBookOpen, FaCode } from 'react-icons/fa';
 import { FiCode } from 'react-icons/fi';
-import { isIOS } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 // import profilePic from '../../assets/images/profile.jpg';
 // import autoban from '../../assets/images/autoban.png'
 // import partytracker from '../../assets/images/partytracker.png'
@@ -21,8 +21,8 @@ export default function Portfolio() {
   );
 
   useEffect(() => {
-    console.log(isIOS);
-    if (isIOS) {
+    console.log(isMobile);
+    if (isMobile) {
       setContainermain('container-main flex-column ios');
     }
   }, []);

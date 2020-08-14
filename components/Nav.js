@@ -2,11 +2,14 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown, Collapse } from 'react-bootstrap';
+import Fade from 'react-reveal/Fade';
+import useWidth from './hooks/useWidth';
 
 export default function Nav() {
   const [navState, setNavState] = useState(false);
   const route = useRouter().route;
+  const width = useWidth();
   console.log(route);
 
   return (
@@ -46,11 +49,12 @@ export default function Nav() {
         <span className='navbar-toggler-icon'></span>
       </button>
 
-      <div
-        className={navState ? 'navbar-collapse' : 'collapse navbar-collapse'}
-        id='navbarSupportedContent'
-      >
-        <ul className='navbar-nav mr-auto'>
+      
+      <Collapse in={navState}>
+      {/* <div
+        className={width > 992 ? 'navbar-collapse' : 'collapse navbar-collapse'}
+      > */}
+        <ul className='navbar-nav'>
           <li className={route === '/' ? 'nav-item active' : 'nav-item'}>
             <a className='nav-link navbar-name' href='/'>
               Home<span className='sr-only'>(current)</span>
@@ -100,7 +104,8 @@ export default function Nav() {
             </Dropdown>
           </li>
         </ul>
-      </div>
+      {/* </div> */}
+      </Collapse>
     </nav>
   );
 }

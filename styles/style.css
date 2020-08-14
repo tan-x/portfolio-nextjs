@@ -47,6 +47,16 @@ nav {
 	width: fit-content !important;
 	padding: 0 10px;
 	background-color: rgba(184, 184, 184, 0.1);
+	flex-direction: row;
+}
+
+@media (max-width: 992px) {
+	.navbar-expand-lg .navbar-nav {
+		-ms-flex-direction: row;
+		flex-direction: row;
+		width: 100%!important;
+		justify-content: space-between;
+	}
 }
 
 .navbar-brand {
@@ -82,11 +92,6 @@ nav {
 	border: none;
 }
 
-.nav-item.dropdown {
-	display: flex;
-	align-items: center;
-}
-
 .dropdown-item {
 	color: white !important;
 	padding: 0.25rem 0.4rem;
@@ -111,11 +116,11 @@ nav {
     box-shadow: none;
 }
 
-.sticky {
+/* .sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
+} */
 
 .btn-primary {
 	margin-bottom: 0!important;
@@ -204,7 +209,6 @@ header.smhead3 img {
 
 /* main container styling */
 .scroll-container {
-
 	min-height: calc(100vh - 61px);
 	position: fixed;
 	top: 61px;
@@ -259,15 +263,6 @@ header.smhead3 img {
 	max-width: 1200px;
 	font-size: 0.8em;
 	margin: 30px 35px 30px !important;
-}
-
-.content-contact {
-	max-width: 1000px;
-	width: 90vw;
-	font-size: 0.8em;
-	/* margin: 20px 35px !important; */
-	padding: 20px 20px !important;
-	transition: all 0.5s ease-in-out;
 }
 
 h4 {
@@ -355,6 +350,15 @@ p {
 
 .list-unstyled {
 	margin: -20px
+}
+
+.content-contact {
+	max-width: 800px;
+	width: 90vw;
+	font-size: 0.8em;
+	/* margin: 20px 35px !important; */
+	padding: 40px 30px !important;
+	transition: all 0.5s ease-in-out;
 }
 
 /* portfolio */
@@ -523,7 +527,7 @@ p {
 }
 
 /* scrollbar */
-body::-webkit-scrollbar {
+.scrollcontainer::-webkit-scrollbar {
 	display: none;
 }
 

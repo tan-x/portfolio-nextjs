@@ -38,7 +38,7 @@ export default function Portfolio() {
 						height: 'fit-content',
 						height: 'calc(100vh - 61px)',
 						position: 'relative',
-						top: '61px',
+						top: 0,
 						overflow: 'auto',
 					}}
 				>

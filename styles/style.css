@@ -54,7 +54,7 @@ nav {
 		-ms-flex-direction: row;
 		flex-direction: row;
 		width: 100%!important;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 }
 

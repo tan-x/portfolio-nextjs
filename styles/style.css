@@ -133,9 +133,9 @@ nav {
 	width: 100%;
 } */
 
-.btn-primary {
+/* .btn-primary {
 	margin-bottom: 0!important;
-}
+} */
 
 /* profile header */
 .masthead {
@@ -400,6 +400,14 @@ p {
 	padding: 40px 30px !important;
 }
 
+.details {
+	max-width: 300px;
+}
+
+.details > li {
+	font-size: calc(14px + .05vw);
+}
+
 /* portfolio */
 
 .portfolio-head {
@@ -530,17 +538,13 @@ p {
 	margin-bottom: 8px
 }
 
-.modal-header {
-	display: block;
-}
-
 .modal-body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	/* background: linear-gradient(45deg, rgba(0, 146, 204, 0.2), rgba(229, 57, 53, 0.2)); */
-	padding: 0;
+	padding: 20px 20px
 }
 
 .btn-default {

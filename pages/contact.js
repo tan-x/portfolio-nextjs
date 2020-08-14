@@ -3,15 +3,30 @@ import { useState } from 'react';
 import axios from 'axios';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { Modal, Button } from 'react-bootstrap';
 import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 // import profilePic from '/images/profile.jpg'
 
 export default function Contact() {
-  const [email, setEmail] = useState({name: '', email: '', message: ''});
-  
-  const handleEmailSend = () => {
-    axios.post('/api/contact', email).then(res => console.log(res))
-  }
+	const initialEmail = { name: '', email: '', message: '' };
+	const [email, setEmail] = useState(initialEmail);
+	const [show, setShow] = useState({ modal: false, success: false });
+
+	const handleEmailSend = () => {
+		axios.post('/api/contact', email).then((res) => {
+			if (res.data === 'success') {
+				setShow({ modal: true, success: true });
+			} else {
+				setShow({ modal: true, success: false });
+			}
+		});
+	};
+
+	const handleClose = () => {
+    setShow({ modal: false, success: false });
+    setEmail(initialEmail);
+	};
+
 	return (
 		<>
 			<Head>
@@ -36,10 +51,7 @@ export default function Contact() {
 
 			<div id='background'>
 				<Nav />
-				<div
-        className='scrollcontainer'
-					
-				>
+				<div className='scrollcontainer'>
 					<div className='container-main flex-column' id='port'>
 						{/* <!-- Header --> */}
 						{/* <header className='smhead3'>
@@ -57,7 +69,7 @@ export default function Contact() {
 						<main className='content-contact boxitem rounded'>
 							{/* <!--Section heading--> */}
 							<h3 className='text-center my-4'>
-								<FaEnvelopeOpen style={{ marginBottom: 10 }} /> Contact me
+								<FaEnvelopeOpen style={{ marginBottom: 6 }} /> Contact me
 							</h3>
 							{/* <!--Section description--> */}
 							{/* <p className='text-center mx-auto mb-5'>
@@ -74,7 +86,14 @@ export default function Contact() {
 											{/* <!--Grid column--> */}
 											<div className='col-md-6'>
 												<div className='md-form mb-0'>
-													<input type='text' id='name' name='name' className='form-control' onChange={(e) => setEmail({...email, name: e.target.value})}/>
+													<input
+														type='text'
+														id='name'
+														name='name'
+														className='form-control'
+                            onChange={(e) => setEmail({ ...email, name: e.target.value })}
+                            value={email.name}
+													/>
 													<label htmlFor='name' className=''>
 														Your name
 													</label>
@@ -85,7 +104,14 @@ export default function Contact() {
 											{/* <!--Grid column--> */}
 											<div className='col-md-6'>
 												<div className='md-form mb-0'>
-													<input type='text' id='email' name='email' className='form-control' onChange={(e) => setEmail({...email, email: e.target.value})}/>
+													<input
+														type='text'
+														id='email'
+														name='email'
+														className='form-control'
+														onChange={(e) => setEmail({ ...email, email: e.target.value })}
+                            value={email.email}
+													/>
 													<label htmlFor='email' className=''>
 														Your email
 													</label>
@@ -116,9 +142,10 @@ export default function Contact() {
 													<textarea
 														id='message'
 														name='message'
-														rows='3'
-                            className='form-control md-textarea'
-                            onChange={(e) => setEmail({...email, message: e.target.value})}
+														rows='4'
+														className='form-control md-textarea'
+														onChange={(e) => setEmail({ ...email, message: e.target.value })}
+                            value={email.message}
 													></textarea>
 													<label htmlFor='message'>Your message</label>
 												</div>
@@ -127,16 +154,16 @@ export default function Contact() {
 										{/* <!--Grid row--> */}
 									</form>
 
-									<div className='text-center text-md-left' onClick={handleEmailSend}>
-										<a className='btn btn-primary'>Send</a>
-									</div>
+									{/* <div className='text-center text-md-left' > */}
+										<Button variant='primary' onClick={handleEmailSend}>Send</Button>
+									{/* </div> */}
 									<div className='status'></div>
 								</div>
 								{/* <!--Grid column--> */}
 
 								{/* <!--Grid column--> */}
-								<div className='col-xl-3 text-center'>
-									<ul className='list-unstyled mb-0'>
+								<div className='col-xl-3 text-center flex-center'>
+									<ul className='list-unstyled mb-0 details'>
 										<li>
 											<FaMapMarkerAlt className='fas fa-map-marker-alt fa-2x' />
 											<p>Austin, TX 78745, USA</p>
@@ -144,7 +171,7 @@ export default function Contact() {
 
 										<li>
 											<FaEnvelope className='fas fa-envelope mt-4 fa-2x' />
-											<p>tannerm&#8203;griffin&#8203;@gmail.com</p>
+											<p>tanx&#8203;@tannermgriffin.com</p>
 										</li>
 									</ul>
 								</div>
@@ -152,6 +179,19 @@ export default function Contact() {
 							</div>
 						</main>
 					</div>
+					<Modal show={show.modal} onHide={handleClose}>
+						<Modal.Header closeButton>
+							<Modal.Title>Message Delivered</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+							Thank you for your message, {email.name.split(' ')[0]}! I will respond to you shortly.
+						</Modal.Body>
+						<Modal.Footer>
+							<Button variant='primary' onClick={handleClose}>
+								Close
+							</Button>
+						</Modal.Footer>
+					</Modal>
 					<Footer />
 				</div>
 			</div>

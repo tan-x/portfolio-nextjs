@@ -23,8 +23,8 @@ export default function Contact() {
 	};
 
 	const handleClose = () => {
-    setShow({ modal: false, success: false });
-    setEmail(initialEmail);
+		setShow({ modal: false, success: false });
+		setEmail(initialEmail);
 	};
 
 	return (
@@ -91,8 +91,8 @@ export default function Contact() {
 														id='name'
 														name='name'
 														className='form-control'
-                            onChange={(e) => setEmail({ ...email, name: e.target.value })}
-                            value={email.name}
+														onChange={(e) => setEmail({ ...email, name: e.target.value })}
+														value={email.name}
 													/>
 													<label htmlFor='name' className=''>
 														Your name
@@ -110,7 +110,7 @@ export default function Contact() {
 														name='email'
 														className='form-control'
 														onChange={(e) => setEmail({ ...email, email: e.target.value })}
-                            value={email.email}
+														value={email.email}
 													/>
 													<label htmlFor='email' className=''>
 														Your email
@@ -145,7 +145,7 @@ export default function Contact() {
 														rows='4'
 														className='form-control md-textarea'
 														onChange={(e) => setEmail({ ...email, message: e.target.value })}
-                            value={email.message}
+														value={email.message}
 													></textarea>
 													<label htmlFor='message'>Your message</label>
 												</div>
@@ -155,7 +155,9 @@ export default function Contact() {
 									</form>
 
 									{/* <div className='text-center text-md-left' > */}
-										<Button variant='primary' onClick={handleEmailSend}>Send</Button>
+									<Button variant='primary' onClick={handleEmailSend}>
+										Send
+									</Button>
 									{/* </div> */}
 									<div className='status'></div>
 								</div>
@@ -181,10 +183,14 @@ export default function Contact() {
 					</div>
 					<Modal show={show.modal} onHide={handleClose}>
 						<Modal.Header closeButton>
-							<Modal.Title>Message Delivered</Modal.Title>
+							<Modal.Title>{show.success ? 'Message Delivered' : 'Delivery Error'}</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-							Thank you for your message, {email.name.split(' ')[0]}! I will respond to you shortly.
+							{show.success
+								? `Thank you for your message, ${
+										email.name.split(' ')[0]
+								  }! I will respond to you shortly.`
+								: `Sorry ${email.name.split(' ')[0]}, there was an error delivering your message.`}
 						</Modal.Body>
 						<Modal.Footer>
 							<Button variant='primary' onClick={handleClose}>

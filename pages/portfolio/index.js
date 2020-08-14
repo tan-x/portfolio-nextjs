@@ -32,16 +32,7 @@ export default function Portfolio() {
 			<div id='background'>
 				<Nav />
 
-				<div
-					style={{
-						width: '100%',
-						height: 'fit-content',
-						height: 'calc(100vh - 61px)',
-						position: 'relative',
-						top: 0,
-						overflow: 'auto',
-					}}
-				>
+				<div className='scrollcontainer'>
 					<div className='container-main flex-column' id='port'>
 						{/* <!-- Header --> */}
 						<header className='smhead'>

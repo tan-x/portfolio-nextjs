@@ -37,15 +37,8 @@ export default function Contact() {
 			<div id='background'>
 				<Nav />
 				<div
-					style={{
-						width: '100%',
-						minHeight: 'fit-content',
-						height: 'calc(100vh - 61px)',
-						position: 'relative',
-						top: 0,
-						overflow: 'auto',
-						paddingTop: 30,
-					}}
+        className='scrollcontainer'
+					
 				>
 					<div className='container-main flex-column' id='port'>
 						{/* <!-- Header --> */}

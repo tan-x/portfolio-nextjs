@@ -22,7 +22,6 @@ body {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-
 	background-repeat: none;
 	/* background: rgba(219, 21, 99, 0.8); */
 	background: -webkit-linear-gradient(45deg, rgba(0, 146, 204, 0.9), rgba(229, 57, 53, 0.9));
@@ -90,6 +89,7 @@ nav {
 	padding: 5px 5px !important;
 	margin: 4px 0 !important;
 	border: none;
+	box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.137);
 }
 
 .dropdown-item {
@@ -106,6 +106,7 @@ nav {
 .dropdown-toggle {
 	background: transparent !important;
 	border: rgba(255, 255, 255, 0.753);
+	height: 43px;
 }
 
 .btn-primary:focus {
@@ -216,7 +217,7 @@ header.smhead3 img {
 
 .container-main {
 	width: 100%;
-	min-height: 100%;
+	min-height: calc(100% - 50px);
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -236,6 +237,15 @@ header.smhead3 img {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+}
+
+.scrollcontainer {
+	width: 100%;
+	min-height: fit-content;
+	height: calc(100vh - 59px);
+	position: relative;
+	top: 0;
+	overflow: auto;
 }
 
 #index.container-main {
@@ -302,8 +312,6 @@ p {
 	height: 50px;
 	margin-top: -50px;
 	padding: 8px !important;
-	position: relative;
-	bottom: 0;
 }
 
 .footer a {
@@ -356,9 +364,8 @@ p {
 	max-width: 800px;
 	width: 90vw;
 	font-size: 0.8em;
-	/* margin: 20px 35px !important; */
+	margin: 30px 35px !important;
 	padding: 40px 30px !important;
-	transition: all 0.5s ease-in-out;
 }
 
 /* portfolio */
@@ -530,7 +537,6 @@ p {
 .scrollcontainer::-webkit-scrollbar, #background::-webkit-scrollbar {
 	display: none;
 }
-
 /* custom responsiveness to h3 font-size */
 h3 {
 	font-size: calc(14px + .7vw)

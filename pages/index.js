@@ -40,17 +40,7 @@ export default function Home() {
 			</Head>
 			<div id='background'>
 				<Nav />
-				<div
-        className='scrollcontainer'
-					style={{
-						width: '100%',
-						height: 'fit-content',
-						height: 'calc(100vh - 61px)',
-						position: 'relative',
-						top: 0,
-						overflow: 'auto',
-					}}
-				>
+				<div className='scrollcontainer'>
 					<main className='container-main flex-column' id='index'>
 						{/* <!-- Header --> */}
 						<header className='masthead'>
@@ -154,7 +144,7 @@ export default function Home() {
 										title='Portfolio'
 										img={'/images/autoban.PNG'}
 										description={
-											"Projects demonstrating my experience in JS, HTML5 and CSS3 and modern libraries like React, Next.js, and Express.js"
+											'Projects demonstrating my experience in JS, HTML5 and CSS3 and modern libraries like React, Next.js, and Express.js'
 										}
 									/>
 								</div>

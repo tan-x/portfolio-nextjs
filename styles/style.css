@@ -236,7 +236,7 @@ header.smhead3 img {
 
 /* main container styling */
 .scroll-container {
-	min-height: calc(100vh - 61px);
+	min-height: calc(100vh - 59px);
 	position: fixed;
 	top: 61px;
 }
@@ -244,11 +244,16 @@ header.smhead3 img {
 .container-main {
 	width: 100%;
 	min-height: calc(100% - 50px);
+	height: fit-content;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
-	padding: 0 0 20px;
+	padding: 0 0 70px;
+}
+
+.ios {
+	padding: 0 0 180px;
 }
 
 .flex-column {
@@ -267,11 +272,12 @@ header.smhead3 img {
 
 .scrollcontainer {
 	width: 100%;
-	min-height: fit-content;
+	/* min-height: fit-content; */
 	height: calc(100vh - 59px);
 	position: relative;
 	top: 0;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 #index.container-main {
@@ -344,6 +350,10 @@ p {
 	height: 50px;
 	margin-top: -50px;
 	padding: 8px !important;
+	position: fixed;
+	bottom: 0;
+	width: 100%
+
 }
 
 .footer a {

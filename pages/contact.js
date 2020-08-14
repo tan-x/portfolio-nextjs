@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { Modal, Button } from 'react-bootstrap';
+import { isIOS } from 'react-device-detect';
 import { FaEnvelopeOpen, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 // import profilePic from '/images/profile.jpg'
 
@@ -11,6 +12,14 @@ export default function Contact() {
 	const initialEmail = { name: '', email: '', message: '' };
 	const [email, setEmail] = useState(initialEmail);
 	const [show, setShow] = useState({ modal: false, success: false });
+	let [containermain, setContainermain] = useState('container-main flex-column');
+  
+	useEffect(() => {
+	  console.log(isIOS);
+	  if (isIOS) {
+		setContainermain('container-main flex-column ios');
+	  } 
+	}, []);
 
 	const handleEmailSend = () => {
 		axios.post('/api/contact', email).then((res) => {
@@ -45,14 +54,15 @@ export default function Contact() {
 					integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
 					crossorigin='anonymous'
 				/>
-				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
+				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />				<script type="text/javascript" src="/static/inobounce.js"></script>
+				<script type="text/javascript" src="/static/inobounce.js"></script>
 				<title>Tanner M. Griffin</title>
 			</Head>
 
 			<div id='background'>
 				<Nav />
 				<div className='scrollcontainer'>
-					<div className='container-main flex-column' id='port'>
+					<div className={containermain} id='port'>
 						{/* <!-- Header --> */}
 						{/* <header className='smhead3'>
               <section>

@@ -6,14 +6,47 @@ const PortfolioCard = dynamic(() => import('../../components/PortfolioCard'), {
 });
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
-// import PortfolioCard from '../../components/PortfolioCard';
-import { FaBookOpen, FaCode } from 'react-icons/fa';
 import { FiCode } from 'react-icons/fi';
 import { isMobile } from 'react-device-detect';
-// import profilePic from '../../assets/images/profile.jpg';
-// import autoban from '../../assets/images/autoban.png'
-// import partytracker from '../../assets/images/partytracker.png'
-// import pubio from '../../assets/images/pubio.png'
+
+const portfolioItems = [
+	{
+		link: {
+			page: '/portfolio/autoban',
+			github: 'https://github.com/TheAutobanApp/Autoban',
+			deploy: 'https://autobanprod.herokuapp.com/',
+		},
+		tech: ['react', 'nodejs', 'sequelize', 'mysql', 'css3'],
+		dev: 'Full Stack',
+		title: 'Autoban',
+		img: '/images/autoban.PNG',
+		description: 'A project management solution \n for coders',
+	},
+	{
+		link: {
+			page: '/portfolio/partytracker',
+			github: 'https://github.com/tan-x/gloomhaven-party-tracker',
+			deploy: 'https://ghpartytracker.herokuapp.com/',
+		},
+		tech: ['react', 'nodejs', 'firebase', 'css3'],
+		dev: 'Full Stack',
+		title: 'Party Tracker',
+		img: '/images/partytracker.PNG',
+		description: `Board game companion for \n Gloomhaven: Jaws of the Lion`,
+	},
+	{
+		link: {
+			page: '/portfolio/pubio',
+			github: 'https://github.com/pubIO-2020/pubIO',
+			deploy: 'https://expo.io/@pubio/pubIO',
+		},
+		tech: ['react', 'nodejs', 'firebase', 'css3'],
+		dev: 'Full Stack',
+		title: 'PubIO',
+		img: '/images/pubio.png',
+		description: `Social app for joining and \n planning pub crawls`,
+	},
+];
 
 export default function Portfolio() {
 	const [containermain, setContainermain] = useState('container-main flex-column');
@@ -47,7 +80,6 @@ export default function Portfolio() {
 				<script type='text/javascript' src='/static/inobounce.js'></script>
 				<title>Tanner M. Griffin</title>
 			</Head>
-
 			<div id='background'>
 				<Nav scroll={scroll} setscroll={setScroll} />
 				<div className='scrollcontainer' onScroll={handleScroll}>
@@ -55,81 +87,26 @@ export default function Portfolio() {
 						{/* <!-- Header --> */}
 						<header className='smhead'>
 							<section className='portfolio-head'>
-								{/* <img
-                  className='profile-img profile-img-sm'
-                  src='/images/profile.jpg'
-                  alt='Profile Picture'
-                /> */}
 								<div className='recentproj'>
 									<h3>
 										<FiCode /> Recent Projects
 									</h3>
 								</div>
-								{/* <div className='border-top'></div> */}
 							</section>
 						</header>
-
-						<PortfolioCard
-							link='/portfolio/autoban'
-							left={true}
-							tech={['react', 'nodejs', 'sequelize', 'mysql', 'css3']}
-							dev='Full Stack'
-							title='Autoban'
-							img={'/images/autoban.PNG'}
-							description={'A project management solution \n for coders'}
-						/>
-						<PortfolioCard
-							link='/portfolio'
-							right={true}
-							tech={['react', 'nodejs', 'firebase', 'css3']}
-							dev='Full Stack'
-							title='Party Tracker'
-							subtitle='Gloomhaven: Jaws of the Lion'
-							img={'/images/partytracker.PNG'}
-							description={`Board game companion for \n Gloomhaven: Jaws of the Lion`}
-						/>
-						{/* <header className='smhead' id='smhead2'>
-							<section className='recentproj'>
-								<h3 className='portfolio-mid'>
-									<FiCode /> React Native
-								</h3>
-							</section>
-						</header> */}
-						<PortfolioCard
-							link='/portfolio'
-							left={true}
-							tech={['react', 'nodejs', 'firebase', 'css3']}
-							dev='Full Stack'
-							title='PubIO'
-							img={'/images/pubio.png'}
-							description={`Social app for joining and \n planning pub crawls`}
-						/>
-						<div className='modal fade' id='myModal'>
-							<div className='modal-dialog'>
-								{/* <!-- Modal content--> */}
-								<div className='modal-content'>
-									<div className='modal-header'>
-										<button type='button' className='close' data-dismiss='modal'>
-											<i className='fa fa-close'></i>
-										</button>
-										<h3 className='modal-title'>Modal Header</h3>
-									</div>
-									<div className='modal-body'>
-										<img className='modal-img' src='./assets/images/pubioHoriB.png' />
-										<h6 className='modal-text'>Pub Crawl App built in React Native</h6>
-									</div>
-									<div className='modal-footer'>
-										<a type='button' className='btn btn-default' id='repo' href='' target='_blank'>
-											<i className='fab fa-github fa-lg'></i> GitHub Repo
-										</a>
-										<a type='button' className='btn btn-default' id='link' href='' target='_blank'>
-											<i className='fa fa-external-link'></i> Link
-										</a>
-										{/* <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --> */}
-									</div>
-								</div>
-							</div>
-						</div>
+						{portfolioItems.map((item, i) => (
+							<PortfolioCard
+								// link={item.link}
+								github={item.link.github}
+								deploy={item.link.deploy}
+								tech={item.tech}
+								dev={item.dev}
+								title={item.title}
+								img={item.img}
+								description={item.description}
+								key={i}
+							/>
+						))}
 					</div>
 					<Footer />
 				</div>

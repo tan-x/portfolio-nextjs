@@ -1,5 +1,5 @@
 import ProjectLayout from '../../components/ProjectLayout';
-import { getAllProjIds, getProjData } from '../../lib/projects.break';
+import { getAllProjIds, getProjData } from '../../lib/projects';
 
 export default function Project({projData}) {
 	return <ProjectLayout>...</ProjectLayout>;

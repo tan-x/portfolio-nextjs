@@ -1,31 +1,17 @@
-// import React from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Dropdown, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { FaReact, FaNodeJs, FaCss3Alt, FaGithub } from 'react-icons/fa';
-import { DiJavascript, DiCss3, DiMongodb } from 'react-icons/di';
+import { Card } from 'react-bootstrap';
 import { FiCode } from 'react-icons/fi';
-import { GrMysql } from 'react-icons/gr';
-import firebase from '../assets/images/icons8-firebase.svg';
-import sequelize from '../assets/images/sequelize.png';
 import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
 import useWidth from './hooks/useWidth';
 
-// import styles from './PortfolioHome.module.css'
-
 export default function PortfolioHome(props) {
-	//   const [navState, setNavState] = useState(false);
-	//   const route = useRouter().route;
-	//   console.log(route);
 	const [hover, setHover] = useState({ right: '-10%', filter: 'opacity(80%)' });
 	const [image, setImage] = useState({
 		src: '/images/autoban.PNG',
 		sources: ['/images/autoban.PNG', '/images/partytracker.PNG', '/images/pubio.png'],
 		current: 0,
 	});
-
 	const width = useWidth();
 
 	useEffect(() => {
@@ -39,80 +25,9 @@ export default function PortfolioHome(props) {
 		return () => clearInterval(interval);
 	}, [image.src]);
 
-	const techArray = [
-		{
-			type: 'react',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='react-icon'>React</Tooltip>}>
-					<FaReact className='tech-icon' color='#48d8ff' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'nodejs',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='node-icon'>Node.js</Tooltip>}>
-					<FaNodeJs className='tech-icon' color='#659a60' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'mysql',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='mysql-icon'>MySQL</Tooltip>}>
-					<GrMysql className='tech-icon' color='#1a5c87' id='mysql' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'js',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='js-icon'>Javascript</Tooltip>}>
-					<DiJavascript className='tech-icon' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'css3',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='css-icon'>CSS3</Tooltip>}>
-					<DiCss3 className='tech-icon' color='#3299f8' id='css' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'firebase',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='firebase-icon'>Firebase</Tooltip>}>
-					<img src={firebase} className='tech-icon' id='firebase' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'sequelize',
-			icon: (
-				<OverlayTrigger
-					placement='bottom'
-					overlay={<Tooltip id='sequelize-icon'>Sequelize</Tooltip>}
-				>
-					<img src={sequelize} className='tech-icon' id='firebase' />
-				</OverlayTrigger>
-			),
-		},
-		{
-			type: 'mongo',
-			icon: (
-				<OverlayTrigger placement='bottom' overlay={<Tooltip id='mongo-icon'>Mongo</Tooltip>}>
-					<DiMongodb className='tech-icon' color='#6cac48' id='mongo' />
-				</OverlayTrigger>
-			),
-		},
-	];
-
 	return (
 		<>
 			{width > 600 ? (
-				// <Fade left={props.left} right={props.right} duration={props.right ? 900 : 500}></Fade>
 				<Link href={props.link}>
 					<Card className='portfolio-card clickable'>
 						<Card.Body className='port-card-body'>
@@ -128,7 +43,9 @@ export default function PortfolioHome(props) {
 									}}
 								>
 									<div>
-										<h2 style={{ margin: '0 9px 5px' }}>{props.title} <FiCode style={{ margin: '0 0 3px' }}/></h2>
+										<h2 style={{ margin: '0 9px 5px' }}>
+											{props.title} <FiCode style={{ margin: '0 0 3px' }} />
+										</h2>
 										{props.description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>
@@ -159,7 +76,6 @@ export default function PortfolioHome(props) {
 											})}
 									</div>
 								</div>
-								{/* <Slide right when={hover}> */}
 								<Fade right>
 									<img
 										onMouseEnter={() => setHover({ right: '-7%', filter: 'opacity(100%)' })}
@@ -175,9 +91,7 @@ export default function PortfolioHome(props) {
 										}}
 										src={image.src}
 									/>
-                  
 								</Fade>
-								{/* </Slide> */}
 							</div>
 						</Card.Body>
 					</Card>
@@ -198,7 +112,9 @@ export default function PortfolioHome(props) {
 									}}
 								>
 									<div>
-										<h3 style={{ margin: '0 9px 5px' }}>{props.title} <FiCode style={{ margin: '0 0 3px' }}/></h3>
+										<h3 style={{ margin: '0 9px 5px' }}>
+											{props.title} <FiCode style={{ margin: '0 0 3px' }} />
+										</h3>
 										{props.description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>
@@ -229,7 +145,6 @@ export default function PortfolioHome(props) {
 											})}
 									</div>
 								</div>
-								{/* <Slide right when={hover}> */}
 								<div
 									style={{
 										height: 'calc(60px + 36vw)',
@@ -251,7 +166,6 @@ export default function PortfolioHome(props) {
 										/>
 									</Fade>
 								</div>
-								{/* </Slide> */}
 							</div>
 						</Card.Body>
 					</Card>

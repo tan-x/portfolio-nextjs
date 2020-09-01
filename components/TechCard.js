@@ -3,7 +3,7 @@ import { GrStackOverflow } from 'react-icons/gr';
 import Fade from 'react-reveal/Fade';
 import techArray from './util/techArray';
 
-export default function PortfolioCard() {
+export default function TechCard() {
 	return (
 		<Card className='tech-card'>
 			<Card.Body className='port-card-body'>

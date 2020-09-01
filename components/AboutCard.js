@@ -14,7 +14,7 @@ import useWidth from './hooks/useWidth';
 
 // import styles from './PortfolioHome.module.css'
 
-export default function PortfolioHome(props) {
+export default function AboutCard(props) {
   //   const [navState, setNavState] = useState(false);
   //   const route = useRouter().route;
   //   console.log(route);

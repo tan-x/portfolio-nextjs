@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Fade from 'react-reveal/Fade';

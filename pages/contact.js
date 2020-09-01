@@ -43,31 +43,15 @@ export default function Contact() {
 		}
 		if (Nav.navState) {
 		}
-	}
+	};
 
 	return (
 		<>
-			<Head/>
+			<Head />
 			<div id='background'>
-				<Nav scroll={scroll} setscroll={setScroll}/>
+				<Nav scroll={scroll} setscroll={setScroll} />
 				<div className='scrollcontainer' onScroll={handleScroll}>
-					<div
-						className={containermain}
-						id='port'
-						style={{ justifyContent: 'center'}}
-					>
-						{/* <!-- Header --> */}
-						{/* <header className='smhead3'>
-              <section>
-                <img
-                  className='profile-img profile-img-sm'
-                  src='/images/profile.jpg'
-                  alt='Profile Picture'
-                />
-                <h3 className='contact-head'>Tanner M. Griffin</h3>
-              </section>
-            </header> */}
-
+					<div className={containermain} id='port' style={{ justifyContent: 'center' }}>
 						{/* <!-- Contact form --> */}
 						<Card className='portfolio-card' id='contact-form'>
 							<Card.Body className='port-card-body' style={{ padding: '1vh 20px' }}>
@@ -77,8 +61,9 @@ export default function Contact() {
 								</h3>
 								{/* <!--Section description--> */}
 								<p className='text-center mx-auto mb-3'>
-						Please feel free to contact me if you have any questions or are interested in collaborating.
-					</p>
+									Please feel free to contact me if you have any questions or are interested in
+									collaborating.
+								</p>
 
 								<div className='row'>
 									{/* <!--Grid column--> */}
@@ -121,21 +106,6 @@ export default function Contact() {
 												{/* <!--Grid column--> */}
 											</div>
 											{/* <!--Grid row--> */}
-
-											{/* <!--Grid row--> */}
-											{/* <div className='row'>
-											<div className='col-md-12'>
-												<div className='md-form mb-0'>
-													<input type='text' id='subject' name='subject' className='form-control' onChange={(e) => setEmail({...email, subject: e.target.value})}/>
-													<label htmlFor='subject' className=''>
-														Subject
-													</label>
-												</div>
-											</div>
-										</div> */}
-											{/* <!--Grid row--> */}
-
-											{/* <!--Grid row--> */}
 											<div className='row'>
 												{/* <!--Grid column--> */}
 												<div className='col-md-12'>
@@ -153,17 +123,12 @@ export default function Contact() {
 													</div>
 												</div>
 											</div>
-											{/* <!--Grid row--> */}
 										</form>
-
-										{/* <div className='text-center text-md-left' > */}
 										<Button variant='primary' onClick={handleEmailSend}>
 											Send
 										</Button>
-										{/* </div> */}
 										<div className='status'></div>
 									</div>
-									{/* <!--Grid column--> */}
 
 									{/* <!--Grid column--> */}
 									<div className='col-sm-4 text-center flex-center '>
@@ -179,7 +144,6 @@ export default function Contact() {
 											</li>
 										</ul>
 									</div>
-									{/* <!--Grid column--> */}
 								</div>
 							</Card.Body>
 						</Card>
@@ -190,9 +154,7 @@ export default function Contact() {
 						</Modal.Header>
 						<Modal.Body>
 							{show.success
-								? `Thank you for your message, ${
-										email.name.split(' ')[0]
-								  }! I will respond to you shortly.`
+								? `Thank you for your message, ${email.name.split(' ')[0]}! I will respond to you shortly.`
 								: `Sorry ${email.name.split(' ')[0]}, there was an error delivering your message.`}
 						</Modal.Body>
 						<Modal.Footer>

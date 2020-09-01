@@ -23,7 +23,6 @@ export default function Portfolio(props) {
 	const [scroll, setScroll] = useState(false);
 
 	useEffect(() => {
-		console.log(isMobile);
 		if (isMobile) {
 			setContainermain('container-main flex-column ios');
 		}

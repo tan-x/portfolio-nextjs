@@ -14,8 +14,8 @@ export default function TechCard() {
 					<div className='tech-card-icons'>
 						{techArray.map((item, index) => {
 							return (
-								<Fade delay={index * 200}>
-									<div style={{ margin: '10px 0px' }} key={index}>
+								<Fade delay={index * 200} key={index}>
+									<div style={{ margin: '10px 0px' }}>
 										{item.icon}
 									</div>
 								</Fade>

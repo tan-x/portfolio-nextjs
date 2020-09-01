@@ -16,7 +16,6 @@ export default function Contact() {
 	const [containermain, setContainermain] = useState('container-main flex-column');
 
 	useEffect(() => {
-		console.log(isMobile);
 		if (isMobile) {
 			setContainermain('container-main flex-column ios');
 		}

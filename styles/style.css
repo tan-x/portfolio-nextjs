@@ -585,6 +585,10 @@ p {
 	margin: 2vh 0;
 }
 
+#about > p {
+	font-size: calc(14px + .1vw);
+}
+
 .tech-icon {
 	margin: 0 8px;
 	font-size: calc(20px + .5vw);

@@ -29,7 +29,7 @@ export default function Portfolio() {
 
 	return (
 		<>
-			<Head/>
+			<Head />
 			<div id='background'>
 				<Nav scroll={scroll} setscroll={setScroll} />
 				<div className='scrollcontainer' onScroll={handleScroll}>

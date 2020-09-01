@@ -1,19 +1,16 @@
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
-import Link from 'next/link';
+import Head from '../components/HeadData'
 import Nav from '../components/Nav';
 import TechCard from '../components/TechCard'
 import { isMobile } from 'react-device-detect';
 const PortfolioHome = dynamic(() => import('../components/PortfolioHome'), {
   ssr: false,
 });
-import { FaUserCircle, FaBookOpen, FaHandshake } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import profilePic from '../assets/images/profile.jpg';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -39,47 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <meta charSet='UTF-8' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, shrink-to-fit=no'
-        />
-        <meta property='og:title' content='Tanner Griffin - Web Developer' />
-        <meta
-          property='og:image'
-          content='https://tan-x.github.io/assets/images/screenshot2.PNG'
-        />
-        <meta
-          property='og:description'
-          content='Tanner Griffin is a Full Stack Web Developer with years of experience managing a team and delivering financial services to business clients. His background in audio engineering, electronics, financial operations, and management all lend to his ability to manage large projects and provide a quality product to the customer.'
-        />
-        <meta
-          property='og:url'
-          content='https://tan-x.github.io/assets/images/screenshot2.PNG'
-        />
-        <link
-          rel='stylesheet'
-          type='text/css'
-          href='https://tan-x.github.io/'
-        />
-        <link
-          rel='stylesheet'
-          href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-          integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
-          crossOrigin='anonymous'
-        />
-        <link
-          href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
-          rel='stylesheet'
-        />
-        <link
-          href='https://fonts.googleapis.com/css?family=Montserrat'
-          rel='stylesheet'
-        />
-        <script type='text/javascript' src='/static/inobounce.js'></script>
-        <title>Tanner M. Griffin</title>
-      </Head>
+      <Head/>
       <div id='background'>
         <Nav scroll={scroll} setscroll={setScroll}/>
         <div className='scrollcontainer' onScroll={handleScroll}>

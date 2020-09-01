@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 const PortfolioCard = dynamic(() => import('../../components/PortfolioCard'), {
 	ssr: false,
 });
+import Head from '../../components/HeadData';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { FiCode } from 'react-icons/fi';
@@ -67,19 +67,7 @@ export default function Portfolio() {
 
 	return (
 		<>
-			<Head>
-				<meta charset='UTF-8' />
-				<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-				<link
-					rel='stylesheet'
-					href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-					integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
-					crossorigin='anonymous'
-				/>
-				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
-				<script type='text/javascript' src='/static/inobounce.js'></script>
-				<title>Tanner M. Griffin</title>
-			</Head>
+			<Head/>
 			<div id='background'>
 				<Nav scroll={scroll} setscroll={setScroll} />
 				<div className='scrollcontainer' onScroll={handleScroll}>

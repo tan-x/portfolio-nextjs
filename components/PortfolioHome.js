@@ -5,6 +5,8 @@ import { FiCode } from 'react-icons/fi';
 import Fade from 'react-reveal/Fade';
 import useWidth from './hooks/useWidth';
 
+const description = 'Projects demonstrating my experience in JS, HTML5 and CSS3 and modern libraries like React, Next.js, and Express.js';
+
 export default function PortfolioHome(props) {
 	const [hover, setHover] = useState({ right: '-10%', filter: 'opacity(80%)' });
 	const [image, setImage] = useState({
@@ -28,7 +30,7 @@ export default function PortfolioHome(props) {
 	return (
 		<>
 			{width > 600 ? (
-				<Link href={props.link}>
+				<Link href='/portfolio'>
 					<Card className='portfolio-card clickable'>
 						<Card.Body className='port-card-body'>
 							<div className='port-body-hidden'>
@@ -44,9 +46,9 @@ export default function PortfolioHome(props) {
 								>
 									<div>
 										<h2 style={{ margin: '0 9px 5px' }}>
-											{props.title} <FiCode style={{ margin: '0 0 3px' }} />
+											Portfolio <FiCode style={{ margin: '0 0 3px' }} />
 										</h2>
-										{props.description.split('\n').map((i, index) => {
+										{description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>
 													{i}
@@ -58,22 +60,6 @@ export default function PortfolioHome(props) {
 									<div>
 										<p className='port-role'>{props.dev} Development</p>
 										<p className='port-role'>UI/UX Design</p>
-									</div>
-									<div
-										style={{
-											padding: '5px',
-											display: 'flex',
-											minWidth: 'fit-content',
-											minHeight: 'fit-content',
-										}}
-									>
-										{props.tech &&
-											props.tech.map((item, index) => {
-												const foundIndex = techArray.findIndex((el) => el.type === item);
-												if (foundIndex >= 0) {
-													return <div key={index}>{techArray[foundIndex].icon}</div>;
-												}
-											})}
 									</div>
 								</div>
 								<Fade right>
@@ -97,7 +83,7 @@ export default function PortfolioHome(props) {
 					</Card>
 				</Link>
 			) : (
-				<Link href={props.link}>
+				<Link href='/portfolio'>
 					<Card className='portfolio-card'>
 						<Card.Body className='port-card-body'>
 							<div className='port-body-mobile'>
@@ -113,9 +99,9 @@ export default function PortfolioHome(props) {
 								>
 									<div>
 										<h3 style={{ margin: '0 9px 5px' }}>
-											{props.title} <FiCode style={{ margin: '0 0 3px' }} />
+											Portfolio <FiCode style={{ margin: '0 0 3px' }} />
 										</h3>
-										{props.description.split('\n').map((i, index) => {
+										{description.split('\n').map((i, index) => {
 											return (
 												<p key={index} className='port-description'>
 													{i}
@@ -125,24 +111,8 @@ export default function PortfolioHome(props) {
 									</div>
 
 									<div>
-										<p className='port-role'>{props.dev} Development</p>
+										<p className='port-role'>Full Stack Development</p>
 										<p className='port-role'>UI/UX Design</p>
-									</div>
-									<div
-										style={{
-											padding: '5px',
-											display: 'flex',
-											minWidth: 'fit-content',
-											minHeight: 'fit-content',
-										}}
-									>
-										{props.tech &&
-											props.tech.map((item, index) => {
-												const foundIndex = techArray.findIndex((el) => el.type === item);
-												if (foundIndex >= 0) {
-													return <div key={index}>{techArray[foundIndex].icon}</div>;
-												}
-											})}
 									</div>
 								</div>
 								<div

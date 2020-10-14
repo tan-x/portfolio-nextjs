@@ -1,59 +1,20 @@
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 const PortfolioCard = dynamic(() => import('../../components/PortfolioCard'), {
 	ssr: false,
 });
+import Head from '../../components/HeadData';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { FiCode } from 'react-icons/fi';
 import { isMobile } from 'react-device-detect';
-
-const portfolioItems = [
-	{
-		link: {
-			page: '/portfolio/autoban',
-			github: 'https://github.com/TheAutobanApp/Autoban',
-			deploy: 'https://autobanprod.herokuapp.com/',
-		},
-		tech: ['react', 'nodejs', 'sequelize', 'mysql', 'css3'],
-		dev: 'Full Stack',
-		title: 'Autoban',
-		img: '/images/autoban.PNG',
-		description: 'A project management solution \n for coders',
-	},
-	{
-		link: {
-			page: '/portfolio/partytracker',
-			github: 'https://github.com/tan-x/gloomhaven-party-tracker',
-			deploy: 'https://ghpartytracker.herokuapp.com/',
-		},
-		tech: ['react', 'nodejs', 'firebase', 'css3'],
-		dev: 'Full Stack',
-		title: 'Party Tracker',
-		img: '/images/partytracker.PNG',
-		description: `Board game companion for \n Gloomhaven: Jaws of the Lion`,
-	},
-	{
-		link: {
-			page: '/portfolio/pubio',
-			github: 'https://github.com/pubIO-2020/pubIO',
-			deploy: 'https://expo.io/@pubio/pubIO',
-		},
-		tech: ['react', 'nodejs', 'firebase', 'css3'],
-		dev: 'Full Stack',
-		title: 'PubIO',
-		img: '/images/pubio.png',
-		description: `Social app for joining and \n planning pub crawls`,
-	},
-];
+import portfolioItems from '../../components/util/portfolioItems';
 
 export default function Portfolio() {
 	const [containermain, setContainermain] = useState('container-main flex-column');
 	const [scroll, setScroll] = useState(false);
 
 	useEffect(() => {
-		console.log(isMobile);
 		if (isMobile) {
 			setContainermain('container-main flex-column ios');
 		}
@@ -67,19 +28,7 @@ export default function Portfolio() {
 
 	return (
 		<>
-			<Head>
-				<meta charset='UTF-8' />
-				<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-				<link
-					rel='stylesheet'
-					href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-					integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
-					crossorigin='anonymous'
-				/>
-				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
-				<script type='text/javascript' src='/static/inobounce.js'></script>
-				<title>Tanner M. Griffin</title>
-			</Head>
+			<Head />
 			<div id='background'>
 				<Nav scroll={scroll} setscroll={setScroll} />
 				<div className='scrollcontainer' onScroll={handleScroll}>

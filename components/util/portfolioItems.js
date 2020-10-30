@@ -5,7 +5,7 @@ export default [
 			github: 'https://github.com/TheAutobanApp/Autoban',
 			deploy: 'https://autobanprod.herokuapp.com/',
 		},
-		tech: ['react', 'nodejs', 'sequelize', 'mysql', 'css3'],
+		tech: ['react', 'nodejs', 'sequelize', 'mysql', 'mongo'],
 		dev: 'Full Stack',
 		title: 'Autoban',
 		img: '/images/autoban.PNG',
@@ -33,6 +33,6 @@ export default [
 		dev: 'Full Stack',
 		title: 'PubIO',
 		img: '/images/pubio.png',
-		description: `Social app for joining and \n planning pub crawls`,
+		description: `React Native social app for joining \nand planning pub crawls`,
 	},
 ];
